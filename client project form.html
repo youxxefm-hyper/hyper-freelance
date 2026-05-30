@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Freelance • Project Request</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="hyper logo ym17.jpeg" type="image/x-icon">
+
+
+    <style>
+
+
+
+.whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            transition: all 0.3s ease;
+            z-index: 9999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe57;
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float:active {
+            transform: scale(0.95);
+        }
+
+        /* أيقونة الواتساب SVG */
+        .whatsapp-float svg {
+            width: 36px;
+            height: 36px;
+            fill: #fff;
+            pointer-events: none;
+        }
+
+        /* نبضة خفيفة لجذب الانتباه */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.75), 0 0 0 12px rgba(37, 211, 102, 0.12);
+            }
+            100% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            }
+        }
+
+        /* Tooltip صغير يظهر عند التحويم */
+        .whatsapp-float::after {
+            content: "تحدث معنا على واتساب";
+            position: absolute;
+            right: 80px;
+            background: #333;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+        }
+
+
+
+
+
+
+
+
+
+        :root {
+            --bg-start: #0b1120;
+            --bg-end: #030712;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --input-border: rgba(255, 255, 255, 0.1);
+            --input-focus: rgba(59, 130, 246, 0.6);
+            --accent: #3b82f6;
+            --accent-deep: #2563eb;
+            --gradient-btn: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            --shadow-glow: 0 0 25px rgba(59, 130, 246, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at 20% 20%, #1e293b 0%, #0f172a 50%, #020617 100%);
+            position: relative;
+            overflow-x: hidden;
+            padding: 1.5rem;
+        }
+
+        /* خلفية متحركة بدوائر ضبابية */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            top: -200px;
+            left: -200px;
+            border-radius: 50%;
+            animation: float 18s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+            bottom: -150px;
+            right: -150px;
+            border-radius: 50%;
+            animation: float 22s ease-in-out infinite alternate-reverse;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                transform: translate(40px, 30px) scale(1.1);
+            }
+        }
+
+        /* الكارد الرئيسي */
+        .card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 450px;
+            background: var(--card-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-card);
+            color: var(--text-primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+
+        /* العنوان مع أيقونة */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header .icon {
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .header h2 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #e2e8f0, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+            font-weight: 400;
+        }
+
+        /* مجموعة الحقل مع الملصق العائم */
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        /* تنسيق الحقول */
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 14px;
+            outline: none;
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            resize: vertical;
+        }
+
+        .input-group textarea {
+            min-height: 100px;
+            line-height: 1.5;
+        }
+
+        /* إزالة السهم الافتراضي من select */
+        .input-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23cbd5e1' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            cursor: pointer;
+        }
+
+        .input-group select option {
+            background: #1e293b;
+            color: #f1f5f9;
+        }
+
+        /* label العائم */
+        .input-group label {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            padding: 0 4px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 400;
+            pointer-events: none;
+            transition: all 0.25s ease;
+            border-radius: 4px;
+        }
+
+        /* نصوص الـ textarea تبدأ من أعلى */
+        .input-group.textarea-group label {
+            top: 18px;
+            transform: none;
+        }
+
+        /* عند التركيز أو وجود قيمة يتحرك الـ label */
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group textarea:valid ~ label,
+        .input-group select:focus ~ label,
+        .input-group select:valid ~ label {
+            top: -10px;
+            left: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(4px);
+            padding: 0 6px;
+            border-radius: 6px;
+        }
+
+        /* تحسين حدود الفوكس */
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            border-color: var(--input-focus);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* زر الإرسال */
+        .btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 0.8rem;
+            border: none;
+            border-radius: 14px;
+            background: var(--gradient-btn);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.6);
+            background: linear-gradient(135deg, #4f87ff 0%, #9b6dff 100%);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        /* سهم صغير داخل الزر */
+        .btn::after {
+            content: '→';
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* نص التذييل */
+        .small {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* تحسينات للشاشات الصغيرة */
+        @media (max-width: 500px) {
+            .card {
+                padding: 2rem 1.5rem;
+            }
+
+            .header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <div class="icon">🚀</div>
+            <h2>Project Request</h2>
+            <p>Fill in the details &amp; let’s launch your idea</p>
+        </div>
+
+        <form id="form">
+            <!-- الاسم -->
+            <div class="input-group">
+                <input type="text" id="name" name="name" required placeholder=" ">
+                <label for="name">Full Name</label>
+            </div>
+
+            <!-- الهاتف -->
+            <div class="input-group">
+                <input type="tel" id="phone" name="phone" required placeholder=" ">
+                <label for="phone">Phone Number</label>
+            </div>
+
+            <!-- البريد الإلكتروني -->
+            <div class="input-group">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email Address</label>
+            </div>
+
+            <!-- الخدمة -->
+            <div class="input-group">
+                <select id="service" name="service" required>
+                    <option value="" disabled selected></option>
+                    <option>Web Development</option>
+                    <option>Graphic Design</option>
+                    <option>UI/UX Design</option>
+                    <option>Other</option>
+                </select>
+                <label for="service">Select Service</label>
+            </div>
+
+
+              <div class="input-group">
+                <input type="text" id="freelancer" name="freelancer"  placeholder=" name of freelancer, you want to work with">
+                <label for="freelancer"></label>
+            </div>
+
+            <!-- الوصف -->
+            <div class="input-group textarea-group">
+                <textarea id="description" name="description" required placeholder=" "></textarea>
+                <label for="description">Describe your project...</label>
+            </div>
+
+            <!-- الميزانية -->
+            <div class="input-group">
+                <input type="number" id="budget" name="budget" required placeholder=" ">
+                <label for="budget">Budget ($)</label>
+            </div>
+
+            <!-- زر الإرسال -->
+            <button type="submit" class="btn">Send Request</button>
+        </form>
+
+        <div class="small">⚡ We reply within 24 hours</div>
+    </div>
+
+
+
+    <a href="https://wa.me/201270804867"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="تحدث معنا على واتساب"
+    title="تحدث معنا على واتساب">
+
+    <!-- أيقونة واتساب أصلية -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+
+</a>
+
+    <script>
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // استبدل الرابط برابط Google Script الخاص بك
+            fetch("https://script.google.com/macros/s/AKfycbyEsx5M4KqudROA0MR474PC6INc1vb8oX92Euh4az3TnLhGcM0fFojkcVFybyl1Snzo/exec", {
+                method: "POST",
+                body: new FormData(form),
+                mode: "no-cors"
+            }).then(() => {
+                alert("✅ Request Sent Successfully!");
+                form.reset();
+            }).catch(() => {
+                alert("❌ Something went wrong. Please try again.");
+            });
+        });
+    </script>
+
+</body>
+</html>

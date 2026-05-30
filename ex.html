@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الفريلانسرز | Freelancers</title>
+    <style>
+        :root {
+            /* Light Mode (Fallback) */
+            --bg-primary: #f0f2f7;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f8f9fd;
+            --text-primary: #1e2235;
+            --text-secondary: #4a4f63;
+            --text-tertiary: #7c81a0;
+            --border-color: #e2e5f0;
+            --border-light: #eef0f8;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+            --card-shadow-hover: 0 20px 44px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.07);
+            --overlay-bg: rgba(10, 12, 20, 0.6);
+            --modal-bg: #ffffff;
+            --skill-bg: #f1f3fa;
+            --skill-color: #495378;
+            --skill-bg-hover: #e8ecff;
+            --skill-color-hover: #3b54d4;
+            --tag-bg: #f4f5fb;
+            --tag-color: #4a5580;
+            --header-gradient: linear-gradient(135deg, #1a1f35 0%, #252b48 40%, #1a1f35 100%);
+            --header-text: #ffffff;
+            --header-subtitle: rgba(255, 255, 255, 0.8);
+            --badge-bg: rgba(255, 255, 255, 0.12);
+            --badge-text: #ffffff;
+            --star-empty: #d5d9e8;
+            --star-filled: #f2a83b;
+            --rating-bg: #f9fafc;
+            --rating-color: #1e2235;
+            --btn-view-shadow: 0 4px 14px rgba(79, 110, 247, 0.3);
+            --btn-view-shadow-hover: 0 8px 28px rgba(79, 110, 247, 0.45);
+            --modal-close-bg: #f1f3fa;
+            --modal-close-color: #555;
+            --modal-close-hover-bg: #e2e5f2;
+            --modal-bio-bg: #f9fafd;
+            --input-bg: #ffffff;
+            --input-border: #e2e5f0;
+            --input-focus-shadow: rgba(79, 110, 247, 0.1);
+            --sort-btn-bg: #ffffff;
+            --sort-btn-border: #e2e5f0;
+            --sort-btn-hover-bg: #eef1ff;
+            --sort-btn-active-bg: #4f6ef7;
+            --sort-btn-active-color: #fff;
+            --top-rated-border: #f2a83b;
+            --top-rated-badge-bg: #fff8ed;
+            --top-rated-badge-color: #c47d10;
+            --status-dot-color: #22c55e;
+            --status-dot-border: #ffffff;
+            --primary: #4f6ef7;
+            --primary-dark: #3b54d4;
+            --primary-light: #eef1ff;
+            --gold: #f2a83b;
+            --gold-light: #fff8ed;
+            --radius: 18px;
+            --radius-sm: 10px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font: 'Segoe UI', 'Tajawal', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
+            --grid-pattern-opacity: 0.03;
+            --glow-effect: none;
+        }
+
+        /* Dark Theme (Default) */
+        [data-theme="dark"] {
+            --bg-primary: #0d0f17;
+            --bg-secondary: #151824;
+            --bg-tertiary: #1a1d2b;
+            --text-primary: #e8eaf0;
+            --text-secondary: #a8adc4;
+            --text-tertiary: #7a7f9a;
+            --border-color: #252a3a;
+            --border-light: #1f2333;
+            --card-bg: #181b28;
+            --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.25);
+            --card-shadow-hover: 0 24px 52px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(79, 110, 247, 0.12);
+            --overlay-bg: rgba(0, 0, 0, 0.75);
+            --modal-bg: #181b28;
+            --skill-bg: #1f2333;
+            --skill-color: #a8adc4;
+            --skill-bg-hover: #252b40;
+            --skill-color-hover: #8b9eff;
+            --tag-bg: #1f2333;
+            --tag-color: #b0b7d4;
+            --header-gradient: linear-gradient(135deg, #090b13 0%, #121624 30%, #0d1020 60%, #090b13 100%);
+            --header-text: #f0f1f5;
+            --header-subtitle: rgba(255, 255, 255, 0.7);
+            --badge-bg: rgba(255, 255, 255, 0.08);
+            --badge-text: rgba(255, 255, 255, 0.85);
+            --star-empty: #2f3548;
+            --star-filled: #f5b642;
+            --rating-bg: #1f2333;
+            --rating-color: #e8eaf0;
+            --btn-view-shadow: 0 4px 18px rgba(79, 110, 247, 0.35);
+            --btn-view-shadow-hover: 0 10px 34px rgba(79, 110, 247, 0.55);
+            --modal-close-bg: #252a3a;
+            --modal-close-color: #b0b5cc;
+            --modal-close-hover-bg: #323750;
+            --modal-bio-bg: #1a1d2b;
+            --input-bg: #181b28;
+            --input-border: #252a3a;
+            --input-focus-shadow: rgba(79, 110, 247, 0.2);
+            --sort-btn-bg: #181b28;
+            --sort-btn-border: #252a3a;
+            --sort-btn-hover-bg: #252b40;
+            --sort-btn-active-bg: #4f6ef7;
+            --sort-btn-active-color: #fff;
+            --top-rated-border: #f5b642;
+            --top-rated-badge-bg: #2a2218;
+            --top-rated-badge-color: #f5b642;
+            --status-dot-color: #22c55e;
+            --status-dot-border: #181b28;
+            --grid-pattern-opacity: 0.04;
+            --glow-effect: 0 0 80px rgba(79, 110, 247, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grid pattern overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: var(--grid-pattern-opacity);
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Ambient glow */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(79, 110, 247, 0.07) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        [data-theme="dark"] body::after {
+            background: radial-gradient(circle, rgba(79, 110, 247, 0.1) 0%, transparent 70%);
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            background: var(--header-gradient);
+            padding: 30px 0 36px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(79, 110, 247, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -90px;
+            left: -80px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-bottom: 14px;
+            line-height: 60px;
+            font-size: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s ease;
+        }
+        .header h1 {
+            color: var(--header-text);
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            transition: color 0.4s ease;
+        }
+        .header .subtitle {
+            color: var(--header-subtitle);
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.4s ease;
+        }
+        .header .badge-count {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+            transition: all 0.4s ease;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle-wrapper {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            z-index: 10;
+        }
+        .theme-toggle {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+        }
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: rotate(15deg) scale(1.08);
+            box-shadow: 0 0 24px rgba(255, 255, 255, 0.15);
+        }
+        .theme-toggle:active {
+            transform: scale(0.92);
+            transition: 0.1s;
+        }
+        .theme-toggle .icon-sun,
+        .theme-toggle .icon-moon {
+            position: absolute;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        [data-theme="dark"] .theme-toggle .icon-sun {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+        [data-theme="dark"] .theme-toggle .icon-moon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.5);
+        }
+        [data-theme="light"] .theme-toggle .icon-sun {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.5);
+        }
+        [data-theme="light"] .theme-toggle .icon-moon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+        [data-theme="light"] .theme-toggle {
+            border-color: rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.04);
+            color: #333;
+        }
+        [data-theme="light"] .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ==================== MAIN CONTAINER ==================== */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 30px 20px 44px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==================== TOOLBAR ==================== */
+        .toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+            max-width: 440px;
+        }
+        .search-wrapper .search-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            color: var(--text-tertiary);
+            pointer-events: none;
+            transition: color var(--transition);
+        }
+        .search-input {
+            width: 100%;
+            padding: 13px 46px 13px 18px;
+            border: 2px solid var(--input-border);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-family: var(--font);
+            background: var(--input-bg);
+            color: var(--text-primary);
+            transition: all var(--transition);
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 5px var(--input-focus-shadow);
+        }
+        .search-input:focus~.search-icon,
+        .search-wrapper:focus-within .search-icon {
+            color: var(--primary);
+        }
+        .search-input::placeholder {
+            color: var(--text-tertiary);
+        }
+        .sort-btn {
+            padding: 13px 24px;
+            border: 2px solid var(--sort-btn-border);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-family: var(--font);
+            background: var(--sort-btn-bg);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition);
+            white-space: nowrap;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            user-select: none;
+        }
+        .sort-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--sort-btn-hover-bg);
+        }
+        .sort-btn.active {
+            background: var(--sort-btn-active-bg);
+            color: var(--sort-btn-active-color);
+            border-color: var(--sort-btn-active-bg);
+        }
+        .results-info {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            flex-shrink: 0;
+            transition: color 0.4s ease;
+        }
+
+        /* ==================== GRID ==================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+            gap: 24px;
+        }
+
+        /* ==================== CARD ==================== */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 28px 22px 24px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition);
+            position: relative;
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: cardFadeIn 0.5s ease forwards;
+            opacity: 0;
+            cursor: default;
+            z-index: 1;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: rgba(79, 110, 247, 0.3);
+            z-index: 2;
+        }
+        .card:hover .card-avatar {
+            transform: scale(1.07);
+            box-shadow: 0 8px 28px rgba(79, 110, 247, 0.35);
+        }
+        .card:hover .card-name {
+            color: var(--primary);
+        }
+        .card.top-rated {
+            border-top: 3px solid var(--top-rated-border);
+        }
+        .top-rated-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--top-rated-badge-bg);
+            color: var(--top-rated-badge-color);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 11px;
+            border-radius: 20px;
+            letter-spacing: 0.2px;
+            transition: all 0.4s ease;
+        }
+        .card-avatar {
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 18px;
+            transition: all var(--transition);
+            flex-shrink: 0;
+            user-select: none;
+            position: relative;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+        .card-avatar .status-dot {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 17px;
+            height: 17px;
+            background: var(--status-dot-color);
+            border-radius: 50%;
+            border: 3px solid var(--status-dot-border);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+        .card-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            transition: color var(--transition);
+            letter-spacing: -0.3px;
+        }
+        .card-title {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-weight: 400;
+            transition: color 0.4s ease;
+        }
+        .stars-container {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: 14px;
+            justify-content: center;
+        }
+        .star {
+            display: inline-block;
+            font-size: 1.1rem;
+            line-height: 1;
+            color: var(--star-empty);
+            position: relative;
+            transition: color 0.2s;
+        }
+        .star.filled {
+            color: var(--star-filled);
+        }
+        .star.half {
+            position: relative;
+            color: var(--star-empty);
+        }
+        .star.half .star-fill {
+            position: absolute;
+            top: 0;
+            right: 0;
+            overflow: hidden;
+            width: 52%;
+            color: var(--star-filled);
+            white-space: nowrap;
+        }
+        .rating-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--rating-color);
+            margin-right: 6px;
+            background: var(--rating-bg);
+            padding: 3px 9px;
+            border-radius: 10px;
+            letter-spacing: -0.2px;
+            transition: all 0.4s ease;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            justify-content: center;
+            margin-bottom: 18px;
+            min-height: 32px;
+        }
+        .skill-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            border-radius: 20px;
+            background: var(--skill-bg);
+            color: var(--skill-color);
+            transition: all 0.25s;
+            white-space: nowrap;
+            letter-spacing: -0.1px;
+        }
+        .card:hover .skill-tag {
+            background: var(--skill-bg-hover);
+            color: var(--skill-color-hover);
+        }
+        .btn-view {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: var(--font);
+            color: #fff;
+            background: var(--primary);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: -0.1px;
+            margin-top: auto;
+            box-shadow: var(--btn-view-shadow);
+        }
+        .btn-view:hover {
+            background: var(--primary-dark);
+            box-shadow: var(--btn-view-shadow-hover);
+            transform: translateY(-3px);
+        }
+        .btn-view:active {
+            transform: scale(0.95);
+            transition: 0.1s;
+        }
+
+        /* ==================== MODAL ==================== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--overlay-bg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal {
+            background: var(--modal-bg);
+            border-radius: var(--radius);
+            padding: 34px 28px 28px;
+            max-width: 480px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            transform: translateY(24px) scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 1px solid var(--border-light);
+        }
+        .modal-overlay.active .modal {
+            transform: translateY(0) scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--modal-close-bg);
+            color: var(--modal-close-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .modal-close:hover {
+            background: var(--modal-close-hover-bg);
+            color: #e55;
+            transform: rotate(90deg);
+        }
+        .modal-avatar {
+            width: 104px;
+            height: 104px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 auto 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+        .modal-name {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+            color: var(--text-primary);
+            transition: color 0.4s ease;
+        }
+        .modal-title {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            transition: color 0.4s ease;
+        }
+        .modal-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            margin-bottom: 16px;
+            font-size: 1.25rem;
+        }
+        .modal-stars .rating-number {
+            font-size: 1rem;
+            margin-right: 8px;
+        }
+        .modal-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .modal-skills .skill-tag {
+            font-size: 0.85rem;
+            padding: 7px 16px;
+        }
+        .modal-bio {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 14px;
+            background: var(--modal-bio-bg);
+            padding: 16px 18px;
+            border-radius: var(--radius-sm);
+            transition: all 0.4s ease;
+        }
+        .modal-contact {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: var(--font);
+            box-shadow: var(--btn-view-shadow);
+        }
+        .modal-contact:hover {
+            background: var(--primary-dark);
+            box-shadow: var(--btn-view-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ==================== EMPTY STATE ==================== */
+        .empty-state {
+            text-align: center;
+            padding: 56px 20px;
+            grid-column: 1 / -1;
+        }
+        .empty-state .empty-icon {
+            font-size: 4.5rem;
+            margin-bottom: 18px;
+            opacity: 0.5;
+        }
+        .empty-state h3 {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            transition: color 0.4s ease;
+        }
+        .empty-state p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: color 0.4s ease;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .header .subtitle {
+                font-size: 0.85rem;
+            }
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 16px;
+            }
+            .card {
+                padding: 22px 16px 18px;
+            }
+            .card-avatar {
+                width: 76px;
+                height: 76px;
+                font-size: 1.7rem;
+            }
+            .card-name {
+                font-size: 1.05rem;
+            }
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-wrapper {
+                max-width: 100%;
+            }
+            .sort-btn {
+                justify-content: center;
+            }
+            .results-info {
+                text-align: center;
+            }
+            .modal {
+                padding: 24px 16px 20px;
+                border-radius: 14px;
+            }
+            .modal-avatar {
+                width: 84px;
+                height: 84px;
+                font-size: 1.9rem;
+            }
+            .theme-toggle-wrapper {
+                top: 10px;
+                left: 12px;
+            }
+            .theme-toggle {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .card {
+                padding: 20px 14px 16px;
+            }
+            .header {
+                padding: 22px 0 24px;
+            }
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            .container {
+                padding: 18px 10px 32px;
+            }
+            .btn-view {
+                width: 100%;
+                justify-content: center;
+                padding: 13px;
+            }
+            .theme-toggle-wrapper {
+                top: 8px;
+                left: 8px;
+            }
+            .theme-toggle {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+            }
+        }
+
+        /* ==================== SCROLLBAR ==================== */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3a3f55;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f5670;
+        }
+        [data-theme="light"] ::-webkit-scrollbar-thumb {
+            background: #c5cadb;
+        }
+        [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+            background: #a8aec5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="theme-toggle-wrapper">
+            <button class="theme-toggle" id="themeToggle" title="تبديل الوضع الداكن/الفاتح" aria-label="تبديل وضع الألوان">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </div>
+        <div class="header-content">
+            <div class="header-icon">💼</div>
+            <h1>منصة الفريلانسرز</h1>
+            <p class="subtitle">اكتشف أفضل المستقلين للعمل على مشاريعك القادمة</p>
+            <span class="badge-count" id="headerCount">8 فريلانسرز متاحين</span>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTAINER ==================== -->
+    <div class="container">
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍  ابحث بالاسم أو المهارة..." autocomplete="off">
+                <span class="search-icon">🔍</span>
+            </div>
+            <button class="sort-btn" id="sortBtn" title="ترتيب حسب التقييم">⭐ الأعلى تقييمًا</button>
+            <span class="results-info" id="resultsInfo">عرض 8 نتائج</span>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="cards-grid" id="cardsGrid">
+            <!-- Cards rendered dynamically -->
+        </div>
+    </div>
+
+    <!-- ==================== MODAL OVERLAY ==================== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modalContent">
+            <button class="modal-close" id="modalClose" title="إغلاق">✕</button>
+            <div class="modal-avatar" id="modalAvatar"></div>
+            <h3 class="modal-name" id="modalName"></h3>
+            <p class="modal-title" id="modalTitle"></p>
+            <div class="modal-stars" id="modalStars"></div>
+            <div class="modal-skills" id="modalSkills"></div>
+            <p class="modal-bio" id="modalBio"></p>
+            <button class="modal-contact">📩 تواصل مع المستقل</button>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ==================== FREELANCERS DATA ====================
+            const freelancers = [
+                { id: 1, name: 'أحمد المحمدي', title: 'مطور ويب شامل', rating: 4.9, skills: ['HTML/CSS', 'JavaScript', 'React', 'Node.js'], avatarColor: '#4f6ef7', bio: 'مطور ويب بخبرة 7 سنوات في بناء تطبيقات ويب حديثة باستخدام أحدث التقنيات. متخصص في React وNode.js مع شغف بتقديم كود نظيف وقابل للتطوير.', reviews: 142 },
+                { id: 2, name: 'سارة القحطاني', title: 'مصممة جرافيك', rating: 4.8, skills: ['Photoshop', 'Illustrator', 'Figma', 'UI/UX'], avatarColor: '#e85d75', bio: 'مصممة جرافيك مبدعة مع تركيز على تصميم الهويات البصرية وتجربة المستخدم. عملت مع أكثر من 50 علامة تجارية محلية وعالمية.', reviews: 98 },
+                { id: 3, name: 'خالد العمري', title: 'كاتب محتوى', rating: 4.6, skills: ['كتابة إبداعية', 'SEO', 'تدوين', 'تسويق بالمحتوى'], avatarColor: '#10b981', bio: 'كاتب محتوى محترف متخصص في كتابة المقالات التسويقية ومحتوى المواقع الإلكترونية. أضمن محتوى متوافق مع محركات البحث وجذاب للقارئ.', reviews: 67 },
+                { id: 4, name: 'نورة الشمري', title: 'مترجمة معتمدة', rating: 4.9, skills: ['ترجمة فورية', 'ترجمة قانونية', 'إنجليزي', 'فرنسي'], avatarColor: '#8b5cf6', bio: 'مترجمة معتمدة بخبرة 10 سنوات في الترجمة القانونية والتجارية. أتقن 4 لغات وأقدم ترجمات دقيقة بجودة احترافية.', reviews: 203 },
+                { id: 5, name: 'فهد الرشيد', title: 'مسوق رقمي', rating: 4.5, skills: ['إعلانات Google', 'إعلانات فيسبوك', 'تحليلات', 'استراتيجيات'], avatarColor: '#f59e0b', bio: 'مسوق رقمي استراتيجي أساعد الشركات على زيادة مبيعاتها عبر الإنترنت. خبرة في إدارة حملات إعلانية بميزانيات تتجاوز مليون ريال.', reviews: 115 },
+                { id: 6, name: 'لينا العتيبي', title: 'مطورة تطبيقات', rating: 4.7, skills: ['Flutter', 'Dart', 'Firebase', 'Swift'], avatarColor: '#06b6d4', bio: 'مطورة تطبيقات موبايل متخصصة في Flutter، قمت بتطوير أكثر من 15 تطبيقًا على متجري App Store وGoogle Play بتقييمات ممتازة.', reviews: 81 },
+                { id: 7, name: 'عمر السعيد', title: 'محرر فيديو', rating: 4.4, skills: ['Premiere Pro', 'After Effects', 'DaVinci', 'موشن جرافيك'], avatarColor: '#ef4444', bio: 'محرر فيديو إبداعي أصنع محتوى مرئيًا احترافيًا للشركات والمؤثرين. متخصص في الموشن جرافيك والإعلانات التجارية القصيرة.', reviews: 54 },
+                { id: 8, name: 'ريم المنصور', title: 'خبيرة SEO', rating: 4.8, skills: ['تحسين محركات البحث', 'Google Analytics', 'SEMrush', 'استراتيجية'], avatarColor: '#6366f1', bio: 'خبيرة تحسين محركات بحث أساعد المواقع في الوصول للصفحة الأولى. حققت نموًا عضويًا بنسبة 300% لعملائي خلال 6 أشهر.', reviews: 176 }
+            ];
+
+            // ==================== DOM ELEMENTS ====================
+            const cardsGrid = document.getElementById('cardsGrid');
+            const searchInput = document.getElementById('searchInput');
+            const sortBtn = document.getElementById('sortBtn');
+            const resultsInfo = document.getElementById('resultsInfo');
+            const headerCount = document.getElementById('headerCount');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalClose = document.getElementById('modalClose');
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+
+            // ==================== STATE ====================
+            let currentSort = 'default';
+            let searchQuery = '';
+
+            // ==================== THEME LOGIC ====================
+            function getSavedTheme() {
+                return localStorage.getItem('freelancers-theme') || 'dark';
+            }
+            function applyTheme(theme) {
+                htmlElement.setAttribute('data-theme', theme);
+                localStorage.setItem('freelancers-theme', theme);
+            }
+            function toggleTheme() {
+                const current = htmlElement.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+            }
+
+            // Initialize theme
+            applyTheme(getSavedTheme());
+
+            themeToggle.addEventListener('click', toggleTheme);
+
+            // ==================== HELPERS ====================
+            function generateStarsHTML(rating) {
+                let html = '';
+                const fullStars = Math.floor(rating);
+                const hasHalf = rating - fullStars >= 0.4;
+                const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
+                for (let i = 0; i < fullStars; i++) html += '<span class="star filled">★</span>';
+                if (hasHalf) html += '<span class="star half">☆<span class="star-fill">★</span></span>';
+                for (let i = 0; i < emptyStars; i++) html += '<span class="star">☆</span>';
+                return html;
+            }
+            function getInitials(name) {
+                const parts = name.trim().split(/\s+/);
+                if (parts.length >= 2) return parts[0].charAt(0) + parts[parts.length - 1].charAt(0);
+                return name.charAt(0);
+            }
+
+            function createCard(freelancer, index) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                if (freelancer.rating >= 4.8) card.classList.add('top-rated');
+                card.style.animationDelay = `${index * 0.06}s`;
+                card.setAttribute('data-id', freelancer.id);
+
+                const starsHTML = generateStarsHTML(freelancer.rating);
+                const skillsHTML = freelancer.skills.map(s => `<span class="skill-tag">${s}</span>`).join('');
+
+                card.innerHTML = `
+                    ${freelancer.rating >= 4.8 ? '<span class="top-rated-badge">🏆 الأفضل</span>' : ''}
+                    <div class="card-avatar" style="background:${freelancer.avatarColor};" title="${freelancer.name}">
+                        ${getInitials(freelancer.name)}
+                        <span class="status-dot" title="متاح للعمل"></span>
+                    </div>
+                    <h3 class="card-name">${freelancer.name}</h3>
+                    <p class="card-title">${freelancer.title}</p>
+                    <div class="stars-container">
+                        ${starsHTML}
+                        <span class="rating-number">${freelancer.rating.toFixed(1)}</span>
+                    </div>
+                    <div class="skills-container">${skillsHTML}</div>
+                    <button class="btn-view" data-id="${freelancer.id}">👁️ عرض الملف الشخصي</button>
+                `;
+
+                card.querySelector('.btn-view').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openModal(freelancer);
+                });
+                return card;
+            }
+
+            function renderCards(dataArray) {
+                cardsGrid.innerHTML = '';
+                if (dataArray.length === 0) {
+                    cardsGrid.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-icon">🔍</div>
+                            <h3>لا توجد نتائج</h3>
+                            <p>لم نجد فريلانسرز يطابقون بحثك. جرّب كلمات أخرى.</p>
+                        </div>`;
+                } else {
+                    dataArray.forEach((freelancer, index) => {
+                        cardsGrid.appendChild(createCard(freelancer, index));
+                    });
+                }
+                updateInfo(dataArray.length);
+            }
+
+            function updateInfo(count) {
+                resultsInfo.textContent = `عرض ${count} نتيجة`;
+                headerCount.textContent = `${count} فريلانسرز متاحين`;
+            }
+
+            function getProcessedData() {
+                let data = [...freelancers];
+                if (searchQuery.trim()) {
+                    const q = searchQuery.trim().toLowerCase();
+                    data = data.filter(f =>
+                        f.name.toLowerCase().includes(q) ||
+                        f.title.toLowerCase().includes(q) ||
+                        f.skills.some(s => s.toLowerCase().includes(q))
+                    );
+                }
+                if (currentSort === 'rating-desc') {
+                    data.sort((a, b) => b.rating - a.rating);
+                }
+                return data;
+            }
+
+            function refreshGrid() {
+                renderCards(getProcessedData());
+            }
+
+            // ==================== MODAL ====================
+            function openModal(f) {
+                document.getElementById('modalAvatar').style.background = f.avatarColor;
+                document.getElementById('modalAvatar').textContent = getInitials(f.name);
+                document.getElementById('modalName').textContent = f.name;
+                document.getElementById('modalTitle').textContent = f.title;
+                document.getElementById('modalStars').innerHTML =
+                    generateStarsHTML(f.rating) +
+                    `<span class="rating-number">${f.rating.toFixed(1)} (${f.reviews} تقييم)</span>`;
+                document.getElementById('modalSkills').innerHTML = f.skills.map(s => `<span class="skill-tag">${s}</span>`).join('');
+                document.getElementById('modalBio').textContent = f.bio;
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            modalClose.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', function(e) { if (e.target === modalOverlay) closeModal(); });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal(); });
+
+            // Search
+            let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => { searchQuery = searchInput.value;
+                    refreshGrid(); }, 250);
+            });
+
+            // Sort
+            sortBtn.addEventListener('click', function() {
+                if (currentSort === 'rating-desc') {
+                    currentSort = 'default';
+                    sortBtn.classList.remove('active');
+                    sortBtn.innerHTML = '⭐ الأعلى تقييمًا';
+                } else {
+                    currentSort = 'rating-desc';
+                    sortBtn.classList.add('active');
+                    sortBtn.innerHTML = '✅ الترتيب الافتراضي';
+                }
+                refreshGrid();
+            });
+
+            // ==================== INIT ====================
+            refreshGrid();
+            updateInfo(freelancers.length);
+            console.log('✅ تم تحميل منصة الفريلانسرز | Dark/Light Mode جاهز | الوضع الحالي:', getSavedTheme());
+        })();
+    </script>
+</body>
+</html>
