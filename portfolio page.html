@@ -59,66 +59,126 @@
             min-height: 100vh;
         }
 
-        /* ── Navigation ─────────────────────────── */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-            transition: var(--transition);
-        }
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 60px;
-        }
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--text);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-        .nav-brand .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--accent);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 800;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-        .nav-cta {
-            padding: 8px 18px;
-            background: var(--accent);
-            color: #fff;
-            border-radius: 24px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.875rem;
-            transition: var(--transition);
-            white-space: nowrap;
-        }
-        .nav-cta:hover {
-            background: var(--accent-dark);
-            box-shadow: 0 4px 16px var(--accent-glow);
-            transform: translateY(-1px);
-        }
 
+
+
+        .navbar {
+      backdrop-filter: blur(12px);
+      background: var(--navbar-bg);
+      box-shadow: var(--navbar-shadow);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-hyper {
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo-freelance {
+      color: var(--text-primary);
+    }
+
+    .trust-badge {
+      font-size: 0.7rem;
+      font-weight: 500;
+      background: var(--accent-glow);
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 40px;
+      margin-left: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+.btn-group {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-start {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-start:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-freelancer {
+      background: transparent;
+      border: 1px solid var(--border-heavy);
+      color: var(--text-primary);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-freelancer:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+
+
+
+
+
+        /* ── Navigation ─────────────────────────── */
+        
         /* ── Hero ─────────────────────────── */
         .hero {
             background: var(--hero-gradient);
@@ -834,21 +894,118 @@
                 padding: 6px 14px;
             }
         }
+
+
+
+
+         .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            transition: all 0.3s ease;
+            z-index: 9999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe57;
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float:active {
+            transform: scale(0.95);
+        }
+
+        /* أيقونة الواتساب SVG */
+        .whatsapp-float svg {
+            width: 36px;
+            height: 36px;
+            fill: #fff;
+            pointer-events: none;
+        }
+
+        /* نبضة خفيفة لجذب الانتباه */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.75), 0 0 0 12px rgba(37, 211, 102, 0.12);
+            }
+            100% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            }
+        }
+
+        /* Tooltip صغير يظهر عند التحويم */
+        .whatsapp-float::after {
+            content: "تحدث معنا على واتساب";
+            position: absolute;
+            right: 80px;
+            background: #333;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+        }
+
+
+
+
+
     </style>
 </head>
 <body>
 
-    <!-- ── Navigation ── -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="#" class="nav-brand">
-                <div class="logo-icon"></div>
-                HYPER Freelance
-            </a>
-            <a href="#" class="nav-cta">Join as Freelancer</a>
-        </div>
-    </nav>
+    <div class="navbar">
+  <div class="container nav-inner">
+    <div class="logo-area">
+      <span class="logo-hyper">   Hyper</span><span class="logo-freelance">Freelance</span>
+     
+    </div>
+    <div class="nav-links">
+      <a href="#">How It Works</a>
+      <a href="#">Services</a>
+      <a href="#">Freelancers</a>
+      <a href="#">Why Us</a>
+    </div>
+    <div class="btn-group">
+        
+         <a href="client project form.html">
+      <button class="btn-start" id="startProjectBtn">Start a Project</button>
+         </a>
 
+               
+      <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7">
+
+      <button class="btn-freelancer" id="joinFreelancerBtn">Join as Freelancer</button>
+      </a>
+      
+       
+        
+      </button>
+    </div>
+  </div>
+</div>
     <!-- ── Hero ── -->
     <section class="hero">
         <div class="hero-dots"></div>
@@ -906,6 +1063,22 @@
             </div>
         </div>
     </div>
+
+
+
+     <a href="https://wa.me/201270804867"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="تحدث معنا على واتساب"
+    title="تحدث معنا على واتساب">
+
+    <!-- أيقونة واتساب أصلية -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+
+</a>
 
     <script>
         (function() {
