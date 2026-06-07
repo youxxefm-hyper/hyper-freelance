@@ -910,6 +910,48 @@
             );
         };
 
+
+       
+
+// ثم أضف المكون الجديد كاملاً:
+const OurWorkSection = () => {
+    return ( 
+        <RevealSection id="our-work" className="py-20 lg:py-28 dark:bg-white/[0.015] bg-gray-100/60">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Our Work</span>
+                <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
+                    See our <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">latest projects</span>
+                </h2>
+                <p className="mt-4 dark:text-gray-400 text-gray-500 max-w-xl mx-auto text-lg">
+                    Browse our curated portfolio of successful collaborations, stunning designs, and high-performance web solutions.
+                </p>
+                <div className="mt-10">
+                    <a href="our-work.html" className="btn-primary inline-flex items-center gap-2 text-base px-10 py-4">
+                        Explore Our Work →
+                    </a>
+                </div>
+                {/* بطاقات معاينة خفيفة */}
+                <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    {[
+                        { title: 'E-Commerce Redesign', tag: 'UI/UX + Dev', color: 'from-indigo-500/20 to-blue-500/20' },
+                        { title: 'SaaS Dashboard', tag: 'Full Stack', color: 'from-violet-500/20 to-purple-500/20' },
+                        { title: 'Brand Identity Pack', tag: 'Graphic Design', color: 'from-pink-500/20 to-rose-500/20' },
+                    ].map((item, i) => (
+                        <div key={i} className={`glass-card-light p-6 rounded-2xl border dark:border-white/[0.04] border-gray-200/50 bg-gradient-to-br ${item.color} hover:scale-[1.02] transition-transform duration-300`}>
+                            <div className="text-2xl mb-3 opacity-60">🖼️</div>
+                            <h3 className="font-bold dark:text-white text-gray-900">{item.title}</h3>
+                            <span className="text-xs text-indigo-400 font-medium mt-1 block">{item.tag}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </RevealSection>
+    );
+};
+
+
+
+
         // ──────────────────────────────────────────────
         // TESTIMONIALS
         // ──────────────────────────────────────────────
@@ -1088,6 +1130,7 @@
                 <WhyUs />
                 <FeaturedFreelancers />
                 <Testimonials />
+                <OurWorkSection />
                 <CTASection />
                 </main>
                 <Footer />
