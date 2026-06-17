@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYPER Freelance — Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f6ff;
+  --surface: #ffffff;
+  --border: #dde0f5;
+  --border-focus: #5b6ef5;
+  --text: #111827;
+  --text2: #6b7280;
+  --text3: #9ca3af;
+  --blue: #5b6ef5;
+  --purple: #8b5cf6;
+  --grad: linear-gradient(135deg, #5b6ef5, #8b5cf6);
+  --error: #ef4444;
+  --success: #10b981;
+  --radius: 10px;
+  --tr: 0.2s ease;
+}
+[data-theme="dark"] {
+  --bg: #0d0e1a;
+  --surface: #141528;
+  --border: #252742;
+  --border-focus: #5b6ef5;
+  --text: #f1f2ff;
+  --text2: #9098c8;
+  --text3: #5a6090;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background var(--tr), color var(--tr);
+}
+
+/* HEADER */
+header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 60px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--tr), border-color var(--tr);
+}
+
+
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:radial-gradient(rgb(0, 47, 255) 1px, transparent 2px);
+    background-size:35px 35px;
+    opacity:0.3;
+}
+
+
+
+/* حركة خفيفة */
+@keyframes float{
+0%{ transform:translate(0,0) }
+50%{ transform:translate(15px,-20px) }
+100%{ transform:translate(0,0) }
+}
+
+
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 6px;
+}
+.logo img { height: 36px; width: auto; display: block; }
+.logo-name { color: var(--text); }
+.logo-name span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.controls { display: flex; gap: 6px; }
+.ctrl {
+  display: flex; align-items: center; gap: 5px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--tr);
+}
+.ctrl:hover { border-color: var(--blue); color: var(--blue); }
+.ctrl svg { width: 13px; height: 13px; }
+
+/* MAIN */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.2rem 2rem;
+  transition: background var(--tr), border-color var(--tr);
+}
+
+/* Card header */
+.card-header { text-align: center; margin-bottom: 1.8rem; }
+.card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+.card-sub { font-size: 0.85rem; color: var(--text2); font-weight: 300; }
+
+/* Type selector */
+.type-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-bottom: 1.6rem; }
+.topt { cursor: pointer; }
+.topt input { display: none; }
+.tcard {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  display: flex; align-items: center; gap: 0.65rem;
+  background: transparent;
+  transition: all var(--tr);
+}
+.tcard:hover { border-color: var(--blue); }
+.topt input:checked + .tcard {
+  border-color: var(--blue);
+  background: rgba(91,110,245,0.06);
+}
+.t-ico {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--tr);
+}
+.t-ico svg { width: 15px; height: 15px; color: var(--text3); transition: color var(--tr); }
+.topt input:checked + .tcard .t-ico {
+  background: var(--grad);
+  border-color: transparent;
+}
+.topt input:checked + .tcard .t-ico svg { color: white; }
+.t-info .t-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.t-info .t-desc { font-size: 0.72rem; color: var(--text3); margin-top: 1px; }
+
+/* Divider */
+.div-row { display: flex; align-items: center; gap: 8px; margin-bottom: 1.3rem; }
+.div-line { flex: 1; height: 1px; background: var(--border); }
+.div-txt { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3); }
+
+/* Panel */
+.panel { display: none; animation: up .25s ease; }
+.panel.active { display: block; }
+@keyframes up { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+
+/* Empty */
+#empty { text-align: center; padding: 2rem; color: var(--text3); font-size: 0.85rem; }
+#empty svg { width: 28px; height: 28px; margin-bottom: 0.6rem; opacity: 0.4; display: block; margin-left: auto; margin-right: auto; }
+
+/* Fields */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.grid .full { grid-column: 1/-1; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.flbl {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text2);
+  display: flex; align-items: center; gap: 3px;
+}
+.req { color: var(--blue); }
+input, select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.87rem;
+  transition: all var(--tr);
+  outline: none;
+}
+input:focus, select:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(91,110,245,0.1);
+}
+input::placeholder { color: var(--text3); }
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%239ca3af' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 11px center;
+  padding-right: 30px;
+  cursor: pointer;
+}
+[dir="rtl"] select {
+  background-position: left 11px center;
+  padding-right: 11px;
+  padding-left: 30px;
+}
+select option { background: var(--surface); }
+.ferr { font-size: 0.7rem; color: var(--error); display: none; }
+.field.err input, .field.err select { border-color: var(--error); }
+.field.err .ferr { display: block; }
+
+/* Specialty */
+.spec-g { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+.sopt { cursor: pointer; }
+.sopt input { display: none; }
+.scard {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--text2);
+  background: transparent;
+  transition: all var(--tr);
+}
+.scard:hover { border-color: var(--purple); color: var(--text); }
+.sopt input:checked + .scard {
+  border-color: var(--purple);
+  background: rgba(139,92,246,0.06);
+  color: var(--purple);
+}
+.s-ico { width: 26px; height: 26px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all var(--tr); }
+.s-ico svg { width: 13px; height: 13px; color: var(--text3); transition: all var(--tr); }
+.sopt input:checked + .scard .s-ico { background: var(--purple); border-color: transparent; }
+.sopt input:checked + .scard .s-ico svg { color: white; }
+
+/* Skills */
+.stags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; min-height: 28px; }
+.stag {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  border: 1px solid rgba(91,110,245,0.3);
+  background: rgba(91,110,245,0.07);
+  font-size: 0.74rem; font-weight: 600; color: var(--blue);
+  cursor: pointer; transition: all var(--tr);
+}
+.stag:hover { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.06); color: var(--error); }
+.ski-row { display: flex; gap: 6px; }
+.ski-row input { flex: 1; }
+.add-btn {
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--blue);
+  background: transparent;
+  color: var(--blue);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem; font-weight: 700;
+  cursor: pointer; transition: all var(--tr);
+  white-space: nowrap;
+}
+.add-btn:hover { background: var(--blue); color: white; }
+
+/* Yes/No */
+.yn-row { display: flex; gap: 8px; }
+.ynopt { flex: 1; cursor: pointer; }
+.ynopt input { display: none; }
+.yncard {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.83rem; font-weight: 600;
+  color: var(--text2);
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  transition: all var(--tr);
+}
+.yncard svg { width: 13px; height: 13px; }
+.yncard:hover { border-color: var(--border-focus); }
+.ynopt.yes input:checked + .yncard { border-color: var(--success); color: var(--success); background: rgba(16,185,129,0.06); }
+.ynopt.no input:checked + .yncard { border-color: var(--error); color: var(--error); background: rgba(239,68,68,0.06); }
+
+/* Submit */
+.sub-btn {
+  width: 100%; margin-top: 1.3rem;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--grad);
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: all var(--tr);
+  box-shadow: 0 4px 16px rgba(91,110,245,0.25);
+}
+.sub-btn:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 8px 22px rgba(91,110,245,0.35); }
+.sub-btn:active { transform: translateY(0); }
+
+/* Hint */
+.hint-txt { font-size: 0.7rem; color: var(--text3); margin-top: 3px; }
+
+/* Success */
+.sov { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; }
+.sov.show { display: flex; animation: fi .2s ease; }
+@keyframes fi { from{opacity:0} to{opacity:1} }
+.smodal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  max-width: 360px; width: 90%;
+  animation: pop .35s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes pop { from{transform:scale(0.9);opacity:0} to{transform:scale(1);opacity:1} }
+.s-check {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.25);
+  margin: 0 auto 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.s-check svg { width: 26px; height: 26px; color: var(--success); }
+.s-title { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+.s-sub { font-size: 0.83rem; color: var(--text2); font-weight: 300; line-height: 1.6; margin-bottom: 1.5rem; }
+.s-ok {
+  padding: 9px 2rem;
+  border-radius: 8px; border: none;
+  background: var(--grad); color: white;
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.87rem;
+  cursor: pointer; transition: all var(--tr);
+}
+.s-ok:hover { opacity: 0.9; }
+
+/* Footer */
+footer { position: relative; z-index: 1; text-align: center; padding: 1rem; font-size: 0.73rem; color: var(--text3); border-top: 1px solid var(--border); }
+
+@media(max-width:480px){
+  .card { padding: 1.5rem 1.2rem; }
+  .grid { grid-template-columns: 1fr; }
+  .grid .full { grid-column: 1; }
+  .spec-g { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+
+<input type="hidden" name="_captcha" value="false">
+<form id="regForm"></form>
+
+
+
+
+<body data-theme="light">
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">
+     <img src="c:\Users\10\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\C54FB383B053282ABF93267C85D536E75CC51080\transfers\2026-10\WhatsApp Image 2026-03-05 at 5.59.38 AM.jpeg">
+    </div>
+    <div class="logo-name">HYPER<span>Freelance</span></div>
+  </div>
+  <div class="controls">
+    <button class="ctrl" onclick="toggleLang()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span id="langLbl">عربي</span>
+    </button>
+    <button class="ctrl" onclick="toggleTheme()">
+      <svg id="thIco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <span id="thLbl">Dark</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title" id="ctitle">Create your account</div>
+      <div class="card-sub" id="csub">Join HYPER Freelance — it only takes a minute</div>
+    </div>
+
+    <!-- TYPE -->
+    <div class="type-row">
+      <label class="topt"><input type="radio" name="utype" value="client" onchange="show('client')">
+        <div class="tcard">
+          <div class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+          <div class="t-info"><div class="t-name" id="tCN">Client</div><div class="t-desc" id="tCD">I want to hire</div></div>
+        </div>
+      </label>
+      <label class="topt"><input type="radio" name="utype" value="freelancer" onchange="show('freelancer')">
+        <div class="tcard">
+          <div class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="t-info"><div class="t-name" id="tFN">Freelancer</div><div class="t-desc" id="tFD">I offer services</div></div>
+        </div>
+      </label>
+    </div>
+
+    <!-- EMPTY -->
+    <div id="empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span id="emTxt">Choose your account type above</span>
+    </div>
+
+    <!-- CLIENT -->
+    <div class="panel" id="panel-client">
+      <div class="div-row"><div class="div-line"></div><span class="div-txt" id="cSec">Your Details</span><div class="div-line"></div></div>
+      <div class="grid">
+        <div class="field" id="fc1"><label class="flbl"><span class="req">*</span><span id="lcFn">First Name</span></label><input type="text" id="cFn" placeholder="mohamed"><span class="ferr" id="ecFn">Required</span></div>
+        <div class="field" id="fc2"><label class="flbl"><span class="req">*</span><span id="lcLn">Last Name</span></label><input type="text" id="cLn" placeholder="omar"><span class="ferr" id="ecLn">Required</span></div>
+        <div class="field" id="fc3"><label class="flbl"><span class="req">*</span><span id="lcPh">Phone</span></label><input type="tel" id="cPh" placeholder="+20 100 000 0000"><span class="ferr" id="ecPh">Enter valid phone</span></div>
+        <div class="field" id="fc4"><label class="flbl"><span class="req">*</span><span id="lcEm">Email</span></label><input type="email" id="cEm" placeholder="john@email.com"><span class="ferr" id="ecEm">Enter valid email</span></div>
+        <div class="field" id="fc5"><label class="flbl"><span class="req">*</span><span id="lcCo">Country</span></label>
+          <select id="cCo"><option value="" id="cCoPh">Select Country</option><option value="EG">Egypt</option><option value="SA">Saudi Arabia</option><option value="AE">UAE</option><option value="KW">Kuwait</option><option value="QA">Qatar</option><option value="JO">Jordan</option><option value="LB">Lebanon</option><option value="MA">Morocco</option><option value="TN">Tunisia</option><option value="OTHER">Other</option></select>
+          <span class="ferr" id="ecCo">Select a country</span></div>
+        <div class="field" id="fc6"><label class="flbl"><span class="req">*</span><span id="lcCi">City</span></label><input type="text" id="cCi" placeholder="New York"><span class="ferr" id="ecCi">Required</span></div>
+      </div>
+      <button class="sub-btn" onclick="submit('client')"><span id="btnC">Create Account</span></button>
+    </div>
+
+    <!-- FREELANCER -->
+    <div class="panel" id="panel-freelancer">
+      <div class="div-row"><div class="div-line"></div><span class="div-txt" id="fSec">Your Details</span><div class="div-line"></div></div>
+      <div class="grid">
+        <div class="field" id="ff1"><label class="flbl"><span class="req">*</span><span id="lfFn">First Name</span></label><input type="text" id="fFn" placeholder="Sara"><span class="ferr" id="efFn">Required</span></div>
+        <div class="field" id="ff2"><label class="flbl"><span class="req">*</span><span id="lfLn">Last Name</span></label><input type="text" id="fLn" placeholder="ali"><span class="ferr" id="efLn">Required</span></div>
+        <div class="field" id="ff3"><label class="flbl"><span class="req">*</span><span id="lfPh">Phone</span></label><input type="tel" id="fPh" placeholder="+20 100 000 0000"><span class="ferr" id="efPh">Enter valid phone</span></div>
+        <div class="field" id="ff4"><label class="flbl"><span class="req">*</span><span id="lfEm">Email</span></label><input type="email" id="fEm" placeholder="sara@email.com"><span class="ferr" id="efEm">Enter valid email</span></div>
+        <div class="field" id="ff5"><label class="flbl"><span class="req">*</span><span id="lfBd">Age</span></label><input type="number" id="fBd" placeholder="15" min="15" max="100"><span class="ferr" id="efBd"></span></div>
+        <div class="field" id="ff6"><label class="flbl"><span class="req">*</span><span id="lfBy">Birth Year</span></label><input type="number" id="fBy" placeholder="1995" min="1930" max="2026"><span class="ferr" id="efBy">Valid year</span></div>
+        <div class="field full" id="ff7">
+          <label class="flbl"><span class="req">*</span><span id="lfSp">Specialty</span></label>
+          <div class="spec-g">
+
+
+            <label class="sopt"><input type="radio" name="spec" value=""><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><span id="spI">web dev</span></div></label>
+
+
+            <label class="sopt"><input type="radio" name="spec" value=""><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 0 21 16z"/></svg></div><span id="spI">ai / ml</span></div></label>
+            
+
+
+            <label class="sopt"><input type="radio" name="spec" value="ai"><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><span id="spI">mobile apps</span></div></label>
+            <label class="sopt"><input type="radio" name="spec" value="ai"><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><span id="spI">Graphic design</span></div></label>
+
+
+            <label class="sopt"><input type="radio" name="spec" value="ai"><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><span id="spI">3D modeling</span></div></label>
+            <label class="sopt"><input type="radio" name="spec" value="ai"><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><span id="spI">video & motion</span></div></label>
+            <label class="sopt"><input type="radio" name="spec" value="ai"><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><span id="spI">Data analytics</span></div></label>
+            <label class="sopt"><input type="radio" name="spec" value="ai"><div class="scard"><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><span id="spI">writing & translation</span></div></label>
+          
+            </div>
+          <span class="ferr" id="efSp">Select a specialty</span>
+        </div>
+        <div class="field" id="ff8"><label class="flbl"><span class="req">*</span><span id="lfCo">Country</span></label>
+          <select id="fCo"><option value="" id="fCoPh">Select Country</option><option value="EG">Egypt</option><option value="SA">Saudi Arabia</option><option value="AE">UAE</option><option value="KW">Kuwait</option><option value="QA">Qatar</option><option value="JO">Jordan</option><option value="LB">Lebanon</option><option value="MA">Morocco</option><option value="TN">Tunisia</option><option value="OTHER">Other</option></select>
+          <span class="ferr" id="efCo">Select a country</span></div>
+        <div class="field" id="ff9"><label class="flbl"><span class="req">*</span><span id="lfCi">City</span></label><input type="text" id="fCi" placeholder="Cairo"><span class="ferr" id="efCi">Required</span></div>
+        <div class="field full" id="ff10">
+          <label class="flbl"><span id="lfSk">Skills</span></label>
+          <div class="stags" id="stags"></div>
+          <div class="ski-row"><input type="text" id="skIn" placeholder="e.g. React, Figma ..."><button class="add-btn" onclick="addSkill()" id="addBtn">+ Add</button></div>
+          <span class="hint-txt" id="skHint">Click a tag to remove</span>
+        </div>
+
+
+
+        
+        <div class="field full" id="ff11">
+          <label class="flbl"><span class="req">*</span><span id="lfPr">Done freelance work before?</span></label>
+          <div class="yn-row">
+            <label class="ynopt yes"><input type="radio" name="prevExp" value="yes"><div class="yncard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg><span id="ynY">Yes</span></div></label>
+            <label class="ynopt no"><input type="radio" name="prevExp" value="no"><div class="yncard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span id="ynN">No</span></div></label>
+          </div>
+
+
+          <br>
+
+
+          <div class="field full" id="ff12">
+<label class="flbl">
+<span class="req">*</span>
+<span id="lfPo">Do you want to sell templates too?</span>
+</label>
+
+<div class="yn-row">
+
+<label class="ynopt yes">
+<input type="radio" name="sellTemplates" value="yes">
+<div class="yncard">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+<polyline points="20,6 9,17 4,12"/>
+</svg>
+<span>Yes</span>
+</div>
+</label>
+
+<label class="ynopt no">
+<input type="radio" name="sellTemplates" value="no">
+<div class="yncard">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+<line x1="18" y1="6" x2="6" y2="18"/>
+<line x1="6" y1="6" x2="18" y2="18"/>
+</svg>
+<span>No</span>
+</div>
+</label>
+
+</div>
+</div>
+
+
+
+
+
+
+          <span class="ferr" id="efPr">Please select one</span>
+        </div>
+      </div>
+      <button class="sub-btn" type="submit('freelancer')"><span id="btnF">Create Account</span></button>
+    </div>
+  </div>
+</main>
+
+
+
+<div class="stars"></div>
+
+
+
+
+
+<footer><span id="fCopy">© 2025 HYPER Freelance. All rights reserved.</span></footer>
+
+<!-- SUCCESS -->
+<div class="sov" id="sov">
+  <div class="smodal">
+    <div class="s-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+    <div class="s-title" id="sT">You're in!</div>
+    <div class="s-sub" id="sS">Account created successfully. Check your email to confirm.</div>
+    <button class="s-ok" onclick="document.getElementById('sov').classList.remove('show')" id="sOk">Done</button>
+  </div>
+</div>
+
+<script>
+const T = {
+  en: {
+    langLbl:'عربي', thDark:'Dark', thLight:'Light',
+    ctitle:'Create your account', csub:'Join HYPER Freelance — it only takes a minute',
+    tCN:'Client', tCD:'I want to hire', tFN:'Freelancer', tFD:'I offer services',
+    emTxt:'Choose your account type above',
+    cSec:'Your Details', fSec:'Your Details',
+    lcFn:'First Name', lcLn:'Last Name', lcPh:'Phone', lcEm:'Email', lcCo:'Country', lcCi:'City',
+    lfFn:'First Name', lfLn:'Last Name', lfPh:'Phone', lfEm:'Email',
+    lfBd:'Age', lfBy:'Birth Year', lfSp:'Specialty', lfCo:'Country', lfCi:'City',
+    lfSk:'Skills', lfPr:'Done freelance work before?',
+    spD:'Design', spW:'Web Dev', spA:'Mobile Apps', spI:'AI / ML',
+    ynY:'Yes', ynN:'No',
+    cCoPh:'Select Country', fCoPh:'Select Country',
+    ecFn:'Required', ecLn:'Required', ecPh:'Enter valid phone', ecEm:'Enter valid email', ecCo:'Select a country', ecCi:'Required',
+    efFn:'Required', efLn:'Required', efPh:'Enter valid phone', efEm:'Enter valid email',
+    efBd:'Day 1–31', efBy:'Valid year', efSp:'Select a specialty', efCo:'Select a country', efCi:'Required', efPr:'Please select one',
+    btnC:'Create Account', btnF:'Create Account',
+    addBtn:'+ Add', skHint:'Click a tag to remove',
+    sT:"You're in!", sS:'Account created successfully. Check your email to confirm.',
+    sOk:'Done', fCopy:'© 2025 HYPER Freelance. All rights reserved.'
+  },
+  ar: {
+    langLbl:'English', thDark:'داكن', thLight:'فاتح',
+    ctitle:'إنشاء حسابك', csub:'انضم إلى HYPER Freelance — يستغرق دقيقة واحدة',
+    tCN:'عميل', tCD:'أريد توظيف مواهب', tFN:'فري لانسر', tFD:'أقدم خدماتي',
+    emTxt:'اختر نوع حسابك أولاً',
+    cSec:'بياناتك', fSec:'بياناتك',
+    lcFn:'الاسم الأول', lcLn:'الاسم الأخير', lcPh:'الهاتف', lcEm:'البريد الإلكتروني', lcCo:'الدولة', lcCi:'المدينة',
+    lfFn:'الاسم الأول', lfLn:'الاسم الأخير', lfPh:'الهاتف', lfEm:'البريد الإلكتروني',
+    lfBd:'يوم الميلاد', lfBy:'سنة الميلاد', lfSp:'التخصص', lfCo:'الدولة', lfCi:'المدينة',
+    lfSk:'المهارات', lfPr:'هل عملت فري لانس من قبل؟',
+    spD:'تصميم', spW:'برمجة ويب', spA:'تطبيقات', spI:'ذكاء اصطناعي',
+    ynY:'نعم', ynN:'لا',
+    cCoPh:'اختر الدولة', fCoPh:'اختر الدولة',
+    ecFn:'مطلوب', ecLn:'مطلوب', ecPh:'أدخل رقم صحيح', ecEm:'أدخل بريد صحيح', ecCo:'اختر الدولة', ecCi:'مطلوب',
+    efFn:'مطلوب', efLn:'مطلوب', efPh:'أدخل رقم صحيح', efEm:'أدخل بريد صحيح',
+    efBd:'يوم 1–31', efBy:'سنة صحيحة', efSp:'اختر التخصص', efCo:'اختر الدولة', efCi:'مطلوب', efPr:'الرجاء الاختيار',
+    btnC:'إنشاء الحساب', btnF:'إنشاء الحساب',
+    addBtn:'+ إضافة', skHint:'انقر على المهارة لحذفها',
+    sT:'تم إنشاء حسابك!', sS:'تم التسجيل بنجاح. تحقق من بريدك الإلكتروني للتأكيد.',
+    sOk:'تم', fCopy:'© 2025 HYPER Freelance. جميع الحقوق محفوظة.'
+  }
+};
+
+const ids = ['ctitle','csub','tCN','tCD','tFN','tFD','emTxt','cSec','fSec','lcFn','lcLn','lcPh','lcEm','lcCo','lcCi','lfFn','lfLn','lfPh','lfEm','lfBd','lfBy','lfSp','lfCo','lfCi','lfSk','lfPr','spD','spW','spA','spI','ynY','ynN','cCoPh','fCoPh','ecFn','ecLn','ecPh','ecEm','ecCo','ecCi','efFn','efLn','efPh','efEm','efBd','efBy','efSp','efCo','efCi','efPr','btnC','btnF','addBtn','skHint','sT','sS','sOk','fCopy'];
+
+let lang = 'en', theme = 'light', skills = [];
+
+function applyLang() {
+  const t = T[lang], ar = lang === 'ar';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = ar ? 'rtl' : 'ltr';
+  ids.forEach(id => { const el = document.getElementById(id); if (el && t[id]) el.textContent = t[id]; });
+  document.getElementById('langLbl').textContent = t.langLbl;
+  document.getElementById('thLbl').textContent = theme === 'light' ? t.thDark : t.thLight;
+}
+
+function toggleLang() { lang = lang === 'en' ? 'ar' : 'en'; applyLang(); }
+
+function toggleTheme() {
+  theme = theme === 'light' ? 'dark' : 'light';
+  document.body.setAttribute('data-theme', theme);
+  const t = T[lang];
+  document.getElementById('thLbl').textContent = theme === 'light' ? t.thDark : t.thLight;
+  const ic = document.getElementById('thIco');
+  ic.innerHTML = theme === 'dark'
+    ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+    : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+}
+
+function show(type) {
+  document.getElementById('empty').style.display = 'none';
+  ['client','freelancer'].forEach(p => document.getElementById('panel-'+p).classList.remove('active'));
+  document.getElementById('panel-'+type).classList.add('active');
+}function addSkill() {
+  const el = document.getElementById('skIn'), v = el.value.trim();
+  if (!v || skills.includes(v)) return;
+  skills.push(v);
+  document.getElementById('stags').innerHTML = skills.map(s =>
+    `<span class="stag" onclick="rmSkill('${s.replace(/'/g,"\\'")}')"><span>${s}</span> <span>×</span></span>`
+  ).join('');
+  el.value = ''; el.focus();
+}
+function rmSkill(s) { skills = skills.filter(x => x !== s); document.getElementById('skIn').value=''; addSkill(); skills = skills.filter(x=>x!==s); document.getElementById('stags').innerHTML = skills.map(s=>`<span class="stag" onclick="rmSkill('${s.replace(/'/g,"\\'")}')"><span>${s}</span> <span>×</span></span>`).join(''); }
+document.getElementById('skIn').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); addSkill(); } });
+
+const isEm = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+const isPh = v => /^[+\d\s\-()\d]{7,}$/.test(v);
+
+function clr(ids) { ids.forEach(id => { const el = document.getElementById(id); if(el) el.classList.remove('err'); }); }
+function err(id) { const el = document.getElementById(id); if(el) el.classList.add('err'); }
+
+
+
+
+function submit(type){
+  var formData = {
+    utype: type,
+    cFn: document.getElementById('cFn')?.value,
+    cLn: document.getElementById('cLn')?.value,
+    cPh: document.getElementById('cPh')?.value,
+    cEm: document.getElementById('cEm')?.value,
+    cCo: document.getElementById('cCo')?.value,
+    cCi: document.getElementById('cCi')?.value,
+    fFn: document.getElementById('fFn')?.value,
+    fLn: document.getElementById('fLn')?.value,
+    fPh: document.getElementById('fPh')?.value,
+    fEm: document.getElementById('fEm')?.value,
+    fCo: document.getElementById('fCo')?.value,
+    fCi: document.getElementById('fCi')?.value,
+    spec: document.querySelector('input[name="spec"]:checked')?.value || "",
+    prevExp: document.querySelector('input[name="prevExp"]:checked')?.value || "",
+    sellTemplates: document.querySelector('input[name="sellTemplates"]:checked')?.value || ""
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbxuehnCieufwB9O3w6QHHvC6CTVPp_HpKZZh20D61P4AhO9h3WAHBtSceLWNFC_JaojKA/exec', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data),
+})
+.then(res => res.json())   // حل تحويل الـresponse من Object لـJSON
+.then(data => {
+  console.log(data);       // تشوف النتيجة في الكونسول
+  alert('Form submitted successfully!');
+})
+.catch(err => {
+  console.error(err);
+  alert('Error submitting form');
+});
+
+}
+
+
+</script>
+</body>
+</html>
