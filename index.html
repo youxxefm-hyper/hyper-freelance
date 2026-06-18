@@ -104,7 +104,7 @@
     <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
 
-    <script type="text/babel">
+    <script type="text/babel" data-type="module">
         const { useState, useEffect, useCallback, useRef } = React;
 
         const SunIcon = () => (
@@ -187,7 +187,6 @@
                 <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'nav-blur shadow-lg shadow-black/5' : 'bg-transparent'}`}>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex items-center justify-between h-16 lg:h-18">
-                            {/* Logo — FIXED: removed nested div inside a */}
                             <a href="#" className="flex items-center gap-2.5">
                                 <span className="font-bold text-lg tracking-tight dark:text-white text-gray-900">
                                     Hyper<span className="text-indigo-400">Freelance</span>
@@ -450,8 +449,8 @@
                 { title:'Faster Hiring', desc:'Average time-to-hire is just 48 hours. Our matching algorithm surfaces the best candidates instantly.', icon:'⚡' },
                 { title:'Secure Payments', desc:'Funds are held in escrow until you approve the work. Full protection for both clients and freelancers.', icon:'🔒' },
                 { title:'Quality-Focused', desc:'Built-in review systems, portfolio verification, and skill assessments ensure exceptional deliverables.', icon:'✅' },
-                { title:'Affordable Pricing', desc:"Competitive rates with zero hidden fees. Transparent pricing means you know exactly what you're paying for.", icon:'💰' },
-                { title:'Dedicated Support', desc:"Real human support from our team. We're here to help resolve any issue within hours, not days.", icon:'🤝' },
+                { title:'Affordable Pricing', desc:"Competitive rates with zero hidden fees. Transparent pricing means you know exactly what youre paying for.", icon:'💰' },
+                { title:'Dedicated Support', desc:"Real human support from our team. Were here to help resolve any issue within hours, not days.", icon:'🤝' },
             ];
             return (
                 <RevealSection id="why-us" className="py-20 lg:py-28">
