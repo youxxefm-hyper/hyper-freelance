@@ -8,21 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-
-<link rel="icon" href="hyper logo ym17.jpeg" type="image/x-icon">
-
-
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+    <link rel="icon" href="hyper logo ym17.jpeg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
                     animation: {
                         'fade-in': 'fadeIn 0.6s ease-out forwards',
                         'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
@@ -33,30 +26,13 @@
                         'slide-in-right': 'slideInRight 0.5s ease-out forwards',
                     },
                     keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(24px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-12px)' },
-                        },
-                        pulseSoft: {
-                            '0%, 100%': { opacity: '0.5' },
-                            '50%': { opacity: '0.8' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(30px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-12px)' } },
+                        pulseSoft: { '0%, 100%': { opacity: '0.5' }, '50%': { opacity: '0.8' } },
+                        slideInRight: { '0%': { opacity: '0', transform: 'translateX(30px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
                     },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                    },
+                    backgroundImage: { 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))' },
                 },
             },
         }
@@ -68,335 +44,104 @@
             --glass-bg-light: rgba(255, 255, 255, 0.8);
             --glass-border-light: rgba(0, 0, 0, 0.06);
         }
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .dark body {
-            background-color: #0a0b0f;
-        }
-        .glass-card {
-            background: var(--glass-bg-dark);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border-dark);
-            border-radius: 16px;
-        }
-        .light .glass-card {
-            background: var(--glass-bg-light);
-            border: 1px solid var(--glass-border-light);
-        }
-        .glass-card-light {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-        }
-        .light .glass-card-light {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .gradient-border {
-            position: relative;
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3), rgba(99, 102, 241, 0.1));
-            padding: 1px;
-        }
-        .gradient-border-inner {
-            background: #0f1015;
-            border-radius: 15px;
-            height: 100%;
-            width: 100%;
-        }
-        .light .gradient-border-inner {
-            background: #ffffff;
-        }
-        .light .gradient-border {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.05));
-        }
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.5), transparent);
-            top: -100px;
-            right: -100px;
-            animation: float 8s ease-in-out infinite;
-        }
-        .orb-2 {
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent);
-            bottom: -80px;
-            left: -80px;
-            animation: float 10s ease-in-out infinite reverse;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #6366f1, #7c3aed);
-            color: white;
-            font-weight: 600;
-            padding: 14px 28px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(99, 102, 241, 0.3);
-            letter-spacing: -0.01em;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.45);
-        }
-        .btn-primary:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 12px rgba(99, 102, 241, 0.25);
-        }
-        .btn-secondary {
-            background: transparent;
-            color: #e2e8f0;
-            font-weight: 600;
-            padding: 14px 28px;
-            border-radius: 12px;
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            letter-spacing: -0.01em;
-        }
-        .btn-secondary:hover {
-            border-color: rgba(255, 255, 255, 0.45);
-            background: rgba(255, 255, 255, 0.04);
-            transform: translateY(-2px);
-        }
-        .light .btn-secondary {
-            color: #374151;
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-        .light .btn-secondary:hover {
-            border-color: rgba(0, 0, 0, 0.3);
-            background: rgba(0, 0, 0, 0.02);
-        }
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15);
-            border-color: rgba(99, 102, 241, 0.4);
-        }
-
-
-
-
-
-        .light .service-card:hover {
-            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.1);
-            border-color: rgba(99, 102, 241, 0.35);
-        }
-        .profile-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
-        }
-        .light .profile-card:hover {
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-        }
-        .star-glow {
-            filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5));
-        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { font-family: 'Inter', system-ui, sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dark body { background-color: #0a0b0f; }
+        .glass-card { background: var(--glass-bg-dark); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--glass-border-dark); border-radius: 16px; }
+        .light .glass-card { background: var(--glass-bg-light); border: 1px solid var(--glass-border-light); }
+        .glass-card-light { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; }
+        .light .glass-card-light { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.05); }
+        .gradient-border { position: relative; border-radius: 16px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3), rgba(99, 102, 241, 0.1)); padding: 1px; }
+        .gradient-border-inner { background: #0f1015; border-radius: 15px; height: 100%; width: 100%; }
+        .light .gradient-border-inner { background: #ffffff; }
+        .light .gradient-border { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.05)); }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; pointer-events: none; z-index: 0; }
+        .orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(99, 102, 241, 0.5), transparent); top: -100px; right: -100px; animation: float 8s ease-in-out infinite; }
+        .orb-2 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent); bottom: -80px; left: -80px; animation: float 10s ease-in-out infinite reverse; }
+        .btn-primary { background: linear-gradient(135deg, #6366f1, #7c3aed); color: white; font-weight: 600; padding: 14px 28px; border-radius: 12px; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(99, 102, 241, 0.3); letter-spacing: -0.01em; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99, 102, 241, 0.45); }
+        .btn-primary:active { transform: translateY(0); box-shadow: 0 2px 12px rgba(99, 102, 241, 0.25); }
+        .btn-secondary { background: transparent; color: #e2e8f0; font-weight: 600; padding: 14px 28px; border-radius: 12px; border: 1.5px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease; letter-spacing: -0.01em; }
+        .btn-secondary:hover { border-color: rgba(255, 255, 255, 0.45); background: rgba(255, 255, 255, 0.04); transform: translateY(-2px); }
+        .light .btn-secondary { color: #374151; border-color: rgba(0, 0, 0, 0.15); }
+        .light .btn-secondary:hover { border-color: rgba(0, 0, 0, 0.3); background: rgba(0, 0, 0, 0.02); }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.4); }
+        .light .service-card:hover { box-shadow: 0 20px 60px rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.35); }
+        .profile-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3); }
+        .light .profile-card:hover { box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08); }
+        .star-glow { filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5)); }
         @media (max-width: 768px) {
-            .orb {
-                display: none;
-            }
-            .btn-primary,
-            .btn-secondary {
-                padding: 12px 22px;
-                font-size: 0.9rem;
-            }
+            .orb { display: none; }
+            .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 0.9rem; }
         }
-        .section-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .section-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .nav-blur {
-            background: rgba(10, 11, 15, 0.75);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-        .light .nav-blur {
-            background: rgba(255, 255, 255, 0.8);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        }
-        .mobile-menu {
-            background: rgba(15, 16, 21, 0.98);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-        }
-        .light .mobile-menu {
-            background: rgba(255, 255, 255, 0.98);
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-        }
-        .light ::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.15);
-        }
-
-
-
- .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-            transition: all 0.3s ease;
-            z-index: 9999;
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #1ebe57;
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
-        }
-
-        .whatsapp-float:active {
-            transform: scale(0.95);
-        }
-
-        /* أيقونة الواتساب SVG */
-        .whatsapp-float svg {
-            width: 36px;
-            height: 36px;
-            fill: #fff;
-            pointer-events: none;
-        }
-
-        /* نبضة خفيفة لجذب الانتباه */
+        .section-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .section-reveal.visible { opacity: 1; transform: translateY(0); }
+        .nav-blur { background: rgba(10, 11, 15, 0.75); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+        .light .nav-blur { background: rgba(255, 255, 255, 0.8); border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+        .mobile-menu { background: rgba(15, 16, 21, 0.98); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); }
+        .light .mobile-menu { background: rgba(255, 255, 255, 0.98); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 3px; }
+        .light ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45); transition: all 0.3s ease; z-index: 9999; text-decoration: none; animation: pulse 2s infinite; }
+        .whatsapp-float:hover { background-color: #1ebe57; transform: scale(1.1); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6); }
+        .whatsapp-float:active { transform: scale(0.95); }
+        .whatsapp-float svg { width: 36px; height: 36px; fill: #fff; pointer-events: none; }
         @keyframes pulse {
-            0% {
-                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-            }
-            50% {
-                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.75), 0 0 0 12px rgba(37, 211, 102, 0.12);
-            }
-            100% {
-                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-            }
+            0% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45); }
+            50% { box-shadow: 0 6px 30px rgba(37, 211, 102, 0.75), 0 0 0 12px rgba(37, 211, 102, 0.12); }
+            100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45); }
         }
-
-        /* Tooltip صغير يظهر عند التحويم */
-        .whatsapp-float::after {
-            content: "تحدث معنا على واتساب";
-            position: absolute;
-            right: 80px;
-            background: #333;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .whatsapp-float:hover::after {
-            opacity: 1;
-        }
-
-
-
-
-
-
-
-
-
+        .whatsapp-float::after { content: "تحدث معنا على واتساب"; position: absolute; right: 80px; background: #333; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 13px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .whatsapp-float:hover::after { opacity: 1; }
     </style>
 </head>
 <body class="dark:bg-[#0a0b0f] bg-gray-50 text-gray-100 dark:text-gray-100 text-gray-900 transition-colors duration-300">
     <div id="root"></div>
 
-   <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
         const { useState, useEffect, useCallback, useRef } = React;
 
-        // ──────────────────────────────────────────────
-        // THEME ICONS
-        // ──────────────────────────────────────────────
-        const SunIcon = () => ( <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        const SunIcon = () => (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="5" />
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg> );
-        const MoonIcon = () => ( <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+        );
+        const MoonIcon = () => (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg> );
-        const MenuIcon = () => ( <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-                </svg> );
-        const CloseIcon = () => ( <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-                </svg> );
-        const CheckIcon = () => ( <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            </svg>
+        );
+        const MenuIcon = () => (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+        );
+        const CloseIcon = () => (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        );
+        const CheckIcon = () => (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
-                </svg> );
-        const StarIcon = ({ filled }) => ( <svg width="15" height="15" viewBox="0 0 24 24"
-            fill={filled ? "#facc15" : "none"} stroke={filled ? "#facc15" : "#9ca3af"} strokeWidth="2"
-            strokeLinecap="round" strokeLinejoin="round" className={filled ? "star-glow" : ""}>
+            </svg>
+        );
+        const StarIcon = ({ filled }) => (
+            <svg width="15" height="15" viewBox="0 0 24 24" fill={filled ? "#facc15" : "none"} stroke={filled ? "#facc15" : "#9ca3af"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={filled ? "star-glow" : ""}>
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg> );
+            </svg>
+        );
 
-        // ──────────────────────────────────────────────
-        // HOOK: INTERSECTION OBSERVER FOR SCROLL REVEAL
-        // ──────────────────────────────────────────────
         const useScrollReveal = () => {
             const ref = useRef(null);
             const [isVisible, setIsVisible] = useState(false);
@@ -404,12 +149,8 @@
                 const node = ref.current;
                 if (!node) return;
                 const observer = new IntersectionObserver(
-                    ([entry]) => {
-                        if (entry.isIntersecting) {
-                            setIsVisible(true);
-                            observer.unobserve(node);
-                        }
-                    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+                    ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(node); } },
+                    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
                 );
                 observer.observe(node);
                 return () => observer.unobserve(node);
@@ -417,19 +158,15 @@
             return [ref, isVisible];
         };
 
-        // ──────────────────────────────────────────────
-        // REUSABLE: Section Reveal Wrapper
-        // ──────────────────────────────────────────────
         const RevealSection = ({ children, className = "" }) => {
             const [ref, isVisible] = useScrollReveal();
-            return ( <section ref={ref} className={`section-reveal ${isVisible ? "visible" : ""} ${className}`}>
-                {children} </section>
+            return (
+                <section ref={ref} className={`section-reveal ${isVisible ? "visible" : ""} ${className}`}>
+                    {children}
+                </section>
             );
         };
 
-        // ──────────────────────────────────────────────
-        // NAVBAR
-        // ──────────────────────────────────────────────
         const Navbar = ({ darkMode, toggleDarkMode }) => {
             const [mobileOpen, setMobileOpen] = useState(false);
             const [scrolled, setScrolled] = useState(false);
@@ -446,718 +183,497 @@
                 { label: 'Why Us', href: '#why-us' },
             ];
 
-            return ( <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'nav-blur shadow-lg shadow-black/5' : 'bg-transparent'}`}>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16 lg:h-18">
-                    {/* Logo */}
-                    <a href="hyper logo ym17.jpeg" className="flex items-center gap-2.5 group">
+            return (
+                <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'nav-blur shadow-lg shadow-black/5' : 'bg-transparent'}`}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex items-center justify-between h-16 lg:h-18">
-                        
-                    </div>
-                    
-                    <span className="font-bold text-lg tracking-tight dark:text-white text-gray-900">
-                        Hyper<span className="text-indigo-400">Freelance</span>
-                    </span>
-                    </a>
+                            {/* Logo — FIXED: removed nested div inside a */}
+                            <a href="#" className="flex items-center gap-2.5">
+                                <span className="font-bold text-lg tracking-tight dark:text-white text-gray-900">
+                                    Hyper<span className="text-indigo-400">Freelance</span>
+                                </span>
+                            </a>
 
-                    {/* Desktop Links */}
-                    <div className="hidden lg:flex items-center gap-1">
-                    {navLinks.map(link => ( <a key={link.label} href={link.href}
-                        className="px-4 py-2 rounded-lg text-sm font-medium dark:text-gray-300 text-gray-600 hover:text-indigo-400 dark:hover:text-white hover:bg-white/5 transition-all duration-200">
-                        {link.label} </a>
-                    ))}
+                            {/* Desktop Links */}
+                            <div className="hidden lg:flex items-center gap-1">
+                                {navLinks.map(link => (
+                                    <a key={link.label} href={link.href} className="px-4 py-2 rounded-lg text-sm font-medium dark:text-gray-300 text-gray-600 hover:text-indigo-400 dark:hover:text-white hover:bg-white/5 transition-all duration-200">
+                                        {link.label}
+                                    </a>
+                                ))}
+                            </div>
+
+                            {/* Right side */}
+                            <div className="hidden lg:flex items-center gap-3">
+                                <button onClick={toggleDarkMode} className="p-2.5 rounded-lg dark:text-gray-400 text-gray-500 hover:text-indigo-400 dark:hover:text-white hover:bg-white/5 transition-all duration-200" aria-label="Toggle theme">
+                                    {darkMode ? <SunIcon /> : <MoonIcon />}
+                                </button>
+                                <a href="client project form.html" className="btn-primary text-sm !py-2.5 !px-5 whitespace-nowrap">Start a Project</a>
+                                <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7" className="btn-secondary text-sm !py-2.5 !px-5 whitespace-nowrap">Join as Freelancer</a>
+                            </div>
+
+                            {/* Mobile buttons */}
+                            <div className="flex lg:hidden items-center gap-2">
+                                <button onClick={toggleDarkMode} className="p-2 rounded-lg dark:text-gray-400 text-gray-500 hover:text-indigo-400" aria-label="Toggle theme">
+                                    {darkMode ? <SunIcon /> : <MoonIcon />}
+                                </button>
+                                <button onClick={() => setMobileOpen(!mobileOpen)} className="p-2 rounded-lg dark:text-gray-300 text-gray-700 hover:bg-white/5" aria-label="Toggle menu">
+                                    {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Right side */}
-                    <div className="hidden lg:flex items-center gap-3">
-                    <button onClick={toggleDarkMode}
-                    className="p-2.5 rounded-lg dark:text-gray-400 text-gray-500 hover:text-indigo-400 dark:hover:text-white hover:bg-white/5 transition-all duration-200"
-                    aria-label="Toggle theme">
-                    {darkMode ? <SunIcon /> : <MoonIcon />}
-                    </button>
-                    <a href="client project form.html" className="btn-primary text-sm !py-2.5 !px-5 whitespace-nowrap">
-                    Start a Project
-                    </a>
-                    <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7" className="btn-secondary text-sm !py-2.5 !px-5 whitespace-nowrap">
-                    Join as Freelancer
-                    </a>
+                    {/* Mobile Menu */}
+                    <div className={`lg:hidden transition-all duration-300 overflow-hidden ${mobileOpen ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                        <div className="mobile-menu px-6 py-5 space-y-3 border-t dark:border-white/5 border-gray-200">
+                            {navLinks.map(link => (
+                                <a key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-base font-medium dark:text-gray-200 text-gray-700 hover:text-indigo-400 transition-colors">
+                                    {link.label}
+                                </a>
+                            ))}
+                            <div className="pt-3 flex flex-col gap-2.5">
+                                <a href="client project form.html" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-sm">Start a Project</a>
+                                <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7" onClick={() => setMobileOpen(false)} className="btn-secondary text-center text-sm">Join as Freelancer</a>
+                            </div>
+                        </div>
                     </div>
-
-                    {/* Mobile buttons */}
-                    <div className="flex lg:hidden items-center gap-2">
-                    <button onClick={toggleDarkMode}
-                    className="p-2 rounded-lg dark:text-gray-400 text-gray-500 hover:text-indigo-400"
-                    aria-label="Toggle theme">
-                    {darkMode ? <SunIcon /> : <MoonIcon />}
-                    </button>
-                    <button onClick={() => setMobileOpen(!mobileOpen)}
-                    className="p-2 rounded-lg dark:text-gray-300 text-gray-700 hover:bg-white/5"
-                    aria-label="Toggle menu">
-                    {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                {/* Mobile Menu */}
-                <div className={`lg:hidden transition-all duration-300 overflow-hidden ${mobileOpen ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="mobile-menu px-6 py-5 space-y-3 border-t dark:border-white/5 border-gray-200">
-                    {navLinks.map(link => ( <a key={link.label} href={link.href} onClick={() => setMobileOpen(false)}
-                    className="block py-2.5 text-base font-medium dark:text-gray-200 text-gray-700 hover:text-indigo-400 transition-colors">
-                    {link.label} </a>
-                    ))}
-                    <div className="pt-3 flex flex-col gap-2.5">
-                    <a href="client project form.html" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-sm">
-                    Start a Project
-                    </a>
-                    <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7" onClick={() => setMobileOpen(false)} className="btn-secondary text-center text-sm">
-                    Join as Freelancer
-                    </a>
-                    </div>
-                </div>
-                </div>
                 </nav>
             );
         };
 
-        // ──────────────────────────────────────────────
-        // HERO SECTION
-        // ──────────────────────────────────────────────
-        const Hero = () => {
-            return ( <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-                {/* Background orbs */}
+        const Hero = () => (
+            <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
                 <div className="orb orb-1 hidden lg:block"></div>
                 <div className="orb orb-2 hidden lg:block"></div>
-
-                {/* Subtle grid overlay */}
-                <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04] pointer-events-none"
-                style={{
-                    backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
-                    backgroundSize: '40px 40px'
-                }}>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    {/* Left: Text */}
-                    <div className="text-center lg:text-left">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-light text-sm font-medium dark:text-indigo-300 text-indigo-600 mb-6 animate-fade-in">
-                            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-soft"></span>
-                            Trusted by 50+ top freelancers
+                <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div className="text-center lg:text-left">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-light text-sm font-medium dark:text-indigo-300 text-indigo-600 mb-6 animate-fade-in">
+                                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-soft"></span>
+                                Trusted by 50+ top freelancers
+                            </div>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.08] dark:text-white text-gray-900 animate-fade-in-up">
+                                Hire Top <br className="hidden sm:block" />
+                                <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">Freelancers.</span>
+                                <br />Build Faster. <br className="hidden sm:block" />Scale Smarter.
+                            </h1>
+                            <p className="mt-5 text-base sm:text-lg dark:text-gray-400 text-gray-500 max-w-lg mx-auto lg:mx-0 leading-relaxed animate-fade-in-delay">
+                                Hyper Freelance is the curated marketplace connecting ambitious startups with elite web developers, designers, and template creators. No noise — just quality talent, ready to deliver.
+                            </p>
+                            <div className="mt-8 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start animate-fade-in-delay-2">
+                                <a href="client project form.html" className="btn-primary text-center text-base">Start a Project ✦</a>
+                                <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7" className="btn-secondary text-center text-base">Join as Freelancer →</a>
+                            </div>
+                            <div className="mt-8 flex items-center gap-6 justify-center lg:justify-start text-sm dark:text-gray-500 text-gray-400 animate-fade-in-delay-2">
+                                <span className="flex items-center gap-1.5"><CheckIcon /> 20 projects</span>
+                                <span className="flex items-center gap-1.5"><CheckIcon /> 98% satisfaction</span>
+                                <span className="flex items-center gap-1.5"><CheckIcon /> Secure payments</span>
+                            </div>
                         </div>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.08] dark:text-white text-gray-900 animate-fade-in-up">
-                            Hire Top <br className="hidden sm:block" />
-                            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
-                                Freelancers.
-                            </span>
-                            <br />
-                            Build Faster. <br className="hidden sm:block" />Scale Smarter.
-                        </h1>
-                        <p className="mt-5 text-base sm:text-lg dark:text-gray-400 text-gray-500 max-w-lg mx-auto lg:mx-0 leading-relaxed animate-fade-in-delay">
-                            Hyper Freelance is the curated marketplace connecting ambitious startups with elite web developers, designers, and template creators. No noise — just quality talent, ready to deliver.
-                        </p>
-                        <div className="mt-8 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start animate-fade-in-delay-2">
-                            <a href="client project form.html" className="btn-primary text-center text-base">
-                                Start a Project ✦
-                            </a>
-                            <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7" className="btn-secondary text-center text-base">
-                                Join as Freelancer →
-                            </a>
-                        </div>
-                        <div className="mt-8 flex items-center gap-6 justify-center lg:justify-start text-sm dark:text-gray-500 text-gray-400 animate-fade-in-delay-2">
-                            <span className="flex items-center gap-1.5"><CheckIcon /> 20 projects</span>
-                            <span className="flex items-center gap-1.5"><CheckIcon /> 98% satisfaction</span>
-                            <span className="flex items-center gap-1.5"><CheckIcon /> Secure payments</span>
-                        </div>
-                    </div>
 
-                    {/* Right: Dashboard Mockup */}
-                    <div className="relative animate-slide-in-right hidden lg:block">
-                        <div className="gradient-border shadow-2xl shadow-indigo-500/10">
-                            <div className="gradient-border-inner p-5 sm:p-6 rounded-[15px] overflow-hidden">
-                                {/* Mock dashboard UI */}
-                                <div className="flex gap-3 mb-4">
-                                    <div className="w-3 h-3 rounded-full bg-red-400/60"></div>
-                                    <div className="w-3 h-3 rounded-full bg-yellow-400/60"></div>
-                                    <div className="w-3 h-3 rounded-full bg-green-400/60"></div>
-                                </div>
-                                <div className="flex gap-4">
-                                    {/* Sidebar mock */}
-                                    <div className="w-14 flex-shrink-0 space-y-3">
-                                        <div className="w-full h-9 rounded-lg bg-indigo-500/20 flex items-center justify-center">
-                                            <div className="w-5 h-5 rounded bg-indigo-400/60"></div>
+                        {/* Desktop mockup */}
+                        <div className="relative animate-slide-in-right hidden lg:block">
+                            <div className="gradient-border shadow-2xl shadow-indigo-500/10">
+                                <div className="gradient-border-inner p-5 sm:p-6 rounded-[15px] overflow-hidden">
+                                    <div className="flex gap-3 mb-4">
+                                        <div className="w-3 h-3 rounded-full bg-red-400/60"></div>
+                                        <div className="w-3 h-3 rounded-full bg-yellow-400/60"></div>
+                                        <div className="w-3 h-3 rounded-full bg-green-400/60"></div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <div className="w-14 flex-shrink-0 space-y-3">
+                                            <div className="w-full h-9 rounded-lg bg-indigo-500/20 flex items-center justify-center"><div className="w-5 h-5 rounded bg-indigo-400/60"></div></div>
+                                            <div className="w-full h-9 rounded-lg bg-white/5 flex items-center justify-center"><div className="w-5 h-5 rounded bg-gray-500/40"></div></div>
+                                            <div className="w-full h-9 rounded-lg bg-white/5 flex items-center justify-center"><div className="w-5 h-5 rounded bg-gray-500/40"></div></div>
+                                            <div className="w-full h-9 rounded-lg bg-white/5 flex items-center justify-center"><div className="w-5 h-5 rounded bg-gray-500/40"></div></div>
                                         </div>
-                                        <div className="w-full h-9 rounded-lg bg-white/5 flex items-center justify-center">
-                                            <div className="w-5 h-5 rounded bg-gray-500/40"></div>
-                                        </div>
-                                        <div className="w-full h-9 rounded-lg bg-white/5 flex items-center justify-center">
-                                            <div className="w-5 h-5 rounded bg-gray-500/40"></div>
-                                        </div>
-                                        <div className="w-full h-9 rounded-lg bg-white/5 flex items-center justify-center">
-                                            <div className="w-5 h-5 rounded bg-gray-500/40"></div>
+                                        <div className="flex-1 space-y-3">
+                                            <div className="flex gap-3">
+                                                <div className="flex-1 h-20 rounded-xl bg-white/5 p-3 flex flex-col justify-between">
+                                                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">Active Projects</span>
+                                                    <span className="text-2xl font-bold text-white">24</span>
+                                                </div>
+                                                <div className="flex-1 h-20 rounded-xl bg-white/5 p-3 flex flex-col justify-between">
+                                                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">Freelancers</span>
+                                                    <span className="text-2xl font-bold text-white">50</span>
+                                                </div>
+                                                <div className="flex-1 h-20 rounded-xl bg-gradient-to-br from-indigo-500/30 to-violet-500/30 p-3 flex flex-col justify-between border border-indigo-400/20">
+                                                    <span className="text-[10px] text-indigo-300 uppercase tracking-wider">Earnings</span>
+                                                    <span className="text-2xl font-bold text-white">$9K</span>
+                                                </div>
+                                            </div>
+                                            <div className="h-32 rounded-xl bg-white/5 p-3 space-y-2">
+                                                <span className="text-[10px] text-gray-500 uppercase tracking-wider">Recent Proposals</span>
+                                                <div className="space-y-1.5">
+                                                    {[['from-amber-400 to-orange-500','2h ago'],['from-emerald-400 to-teal-500','5h ago'],['from-pink-400 to-rose-500','1d ago']].map(([g,t],i) => (
+                                                        <div key={i} className="flex items-center gap-2">
+                                                            <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${g} flex-shrink-0`}></div>
+                                                            <div className="flex-1 h-2 rounded-full bg-white/10"></div>
+                                                            <span className="text-[10px] text-gray-500">{t}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    {/* Main content mock */}
-                                    <div className="flex-1 space-y-3">
-                                        <div className="flex gap-3">
-                                            <div className="flex-1 h-20 rounded-xl bg-white/5 p-3 flex flex-col justify-between">
-                                                <span className="text-[10px] text-gray-500 uppercase tracking-wider">Active Projects</span>
-                                                <span className="text-2xl font-bold text-white">24</span>
-                                            </div>
-                                            <div className="flex-1 h-20 rounded-xl bg-white/5 p-3 flex flex-col justify-between">
-                                                <span className="text-[10px] text-gray-500 uppercase tracking-wider">Freelancers</span>
-                                                <span className="text-2xl font-bold text-white">50</span>
-                                            </div>
-                                            <div className="flex-1 h-20 rounded-xl bg-gradient-to-br from-indigo-500/30 to-violet-500/30 p-3 flex flex-col justify-between border border-indigo-400/20">
-                                                <span className="text-[10px] text-indigo-300 uppercase tracking-wider">Earnings</span>
-                                                <span className="text-2xl font-bold text-white">$9K</span>
-                                            </div>
+                                    <div className="mt-4 flex items-center gap-2">
+                                        <div className="flex -space-x-2">
+                                            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-400 to-violet-500 border-2 border-[#0f1015]"></div>
+                                            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 border-2 border-[#0f1015]"></div>
+                                            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 border-2 border-[#0f1015]"></div>
+                                            <div className="w-7 h-7 rounded-full bg-white/20 border-2 border-[#0f1015] flex items-center justify-center text-[9px] font-bold text-white">+6</div>
                                         </div>
-                                        <div className="h-32 rounded-xl bg-white/5 p-3 space-y-2">
-                                            <span className="text-[10px] text-gray-500 uppercase tracking-wider">Recent Proposals</span>
-                                            <div className="space-y-1.5">
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex-shrink-0"></div>
-                                                    <div className="flex-1 h-2 rounded-full bg-white/10"></div>
-                                                    <span className="text-[10px] text-gray-500">2h ago</span>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex-shrink-0"></div>
-                                                    <div className="flex-1 h-2 rounded-full bg-white/10"></div>
-                                                    <span className="text-[10px] text-gray-500">5h ago</span>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex-shrink-0"></div>
-                                                    <div className="flex-1 h-2 rounded-full bg-white/10"></div>
-                                                    <span className="text-[10px] text-gray-500">1d ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <span className="text-xs text-gray-400">Top freelancers online now</span>
                                     </div>
                                 </div>
-                                {/* Bottom badge */}
-                                <div className="mt-4 flex items-center gap-2">
-                                    <div className="flex -space-x-2">
-                                        <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-400 to-violet-500 border-2 border-[#0f1015]"></div>
-                                        <div className="w-7 h-7 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 border-2 border-[#0f1015]"></div>
-                                        <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 border-2 border-[#0f1015]"></div>
-                                        <div className="w-7 h-7 rounded-full bg-white/20 border-2 border-[#0f1015] flex items-center justify-center text-[9px] font-bold text-white">+6</div>
+                            </div>
+                            <div className="absolute -bottom-4 -left-6 glass-card px-4 py-3 rounded-xl shadow-xl animate-float hidden xl:block">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white font-bold text-sm">✓</div>
+                                    <div>
+                                        <div className="text-xs text-gray-400">Project delivered</div>
+                                        <div className="text-sm font-semibold dark:text-white text-gray-900">in 48 hours</div>
                                     </div>
-                                    <span className="text-xs text-gray-400">Top freelancers online now</span>
                                 </div>
                             </div>
                         </div>
-                        {/* Floating badge */}
-                        <div className="absolute -bottom-4 -left-6 glass-card px-4 py-3 rounded-xl shadow-xl animate-float hidden xl:block">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white font-bold text-sm">✓</div>
-                                <div>
-                                    <div className="text-xs text-gray-400">Project delivered</div>
-                                    <div className="text-sm font-semibold dark:text-white text-gray-900">in 48 hours</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    {/* Mobile: simplified mockup */}
-                    <div className="lg:hidden mt-6 animate-fade-in-delay-2">
-                        <div className="gradient-border max-w-sm mx-auto">
-                            <div className="gradient-border-inner p-4 rounded-[15px]">
-                                <div className="flex gap-2 mb-3">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
-                                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
-                                    <div className="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
-                                </div>
-                                <div className="flex gap-3">
-                                    <div className="flex-1 h-16 rounded-lg bg-white/5 p-2 flex flex-col justify-between">
-                                        <span className="text-[9px] text-gray-500 uppercase">Projects</span>
-                                        <span className="text-xl font-bold text-white">20</span>
+                        {/* Mobile mockup */}
+                        <div className="lg:hidden mt-6 animate-fade-in-delay-2">
+                            <div className="gradient-border max-w-sm mx-auto">
+                                <div className="gradient-border-inner p-4 rounded-[15px]">
+                                    <div className="flex gap-2 mb-3">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
+                                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
+                                        <div className="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
                                     </div>
-                                    <div className="flex-1 h-16 rounded-lg bg-white/5 p-2 flex flex-col justify-between">
-                                        <span className="text-[9px] text-gray-500 uppercase">Freelancers</span>
-                                        <span className="text-xl font-bold text-white">50</span>
-                                    </div>
-                                    <div className="flex-1 h-16 rounded-lg bg-gradient-to-br from-indigo-500/30 to-violet-500/30 p-2 flex flex-col justify-between border border-indigo-400/20">
-                                        <span className="text-[9px] text-indigo-300 uppercase">Earnings</span>
-                                        <span className="text-xl font-bold text-white">$9K</span>
+                                    <div className="flex gap-3">
+                                        <div className="flex-1 h-16 rounded-lg bg-white/5 p-2 flex flex-col justify-between"><span className="text-[9px] text-gray-500 uppercase">Projects</span><span className="text-xl font-bold text-white">20</span></div>
+                                        <div className="flex-1 h-16 rounded-lg bg-white/5 p-2 flex flex-col justify-between"><span className="text-[9px] text-gray-500 uppercase">Freelancers</span><span className="text-xl font-bold text-white">50</span></div>
+                                        <div className="flex-1 h-16 rounded-lg bg-gradient-to-br from-indigo-500/30 to-violet-500/30 p-2 flex flex-col justify-between border border-indigo-400/20"><span className="text-[9px] text-indigo-300 uppercase">Earnings</span><span className="text-xl font-bold text-white">$9K</span></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </section>
-            );
-        };
+        );
 
-
-
-        // ──────────────────────────────────────────────
-        // SOCIAL PROOF / TRUSTED BY
-        // ──────────────────────────────────────────────
-        const SocialProof = () => {
-            const logos = ['', '', '', '', '', ''];
-            return ( <RevealSection className="py-16 lg:py-20 border-t dark:border-white/[0.03] border-gray-200">
+        const SocialProof = () => (
+            <RevealSection className="py-16 lg:py-20 border-t dark:border-white/[0.03] border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p className="text-sm font-medium dark:text-gray-500 text-gray-400 uppercase tracking-widest mb-8">
-                Trusted by innovative companies
-                </p>
-                <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 lg:gap-16 opacity-50 dark:opacity-40">
-                {logos.map((name, i) => ( <span key={i}
-                className="text-lg sm:text-xl font-bold dark:text-gray-400 text-gray-500 tracking-tight select-none"
-                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
-                {name} </span>
-                ))}
+                    <p className="text-sm font-medium dark:text-gray-500 text-gray-400 uppercase tracking-widest mb-8">Trusted by innovative companies</p>
+                    <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                        {[{value:'50+',label:'Curated Freelancers'},{value:'20+',label:'Projects Completed'},{value:'98%',label:'Satisfaction Rate'},{value:'24h',label:'Avg. Time-to-Hire'}].map((stat,i) => (
+                            <div key={i} className="text-center p-4">
+                                <div className="text-3xl sm:text-4xl font-extrabold dark:text-white text-gray-900 tracking-tight">{stat.value}</div>
+                                <div className="text-sm dark:text-gray-500 text-gray-400 mt-1">{stat.label}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                {[
-                { value: '50+', label: 'Curated Freelancers' },
-                { value: '20+', label: 'Projects Completed' },
-                { value: '98%', label: 'Satisfaction Rate' },
-                { value: '24h', label: 'Avg. Time-to-Hire' },
-                ].map((stat, i) => ( <div key={i} className="text-center p-4">
-                <div className="text-3xl sm:text-4xl font-extrabold dark:text-white text-gray-900 tracking-tight">
-                {stat.value}
-                </div>
-                <div className="text-sm dark:text-gray-500 text-gray-400 mt-1">{stat.label}</div>
-                </div>
-                ))}
-                </div>
-                </div>
-                </RevealSection>
-            );
-        };
+            </RevealSection>
+        );
 
-        // ─────────────────────────────────────────────
-        // HOW IT WORKS
-        // ─────────────────────────────────────────────
         const HowItWorks = () => {
             const steps = [
-                { step: '01', title: 'Post a Project', desc: 'Describe your needs in minutes. Our smart form helps you define scope, budget, and timeline with precision.',
-                    icon: '📝', color: 'from-indigo-500 to-blue-500' },
-                { step: '02', title: 'Get Proposals', desc: 'Receive curated proposals from vetted freelancers within hours. Compare portfolios, ratings, and bids side-by-side.',
-                    icon: '📬', color: 'from-violet-500 to-purple-500' },
-                { step: '03', title: 'Hire & Deliver', desc: 'Choose the perfect match, collaborate seamlessly, and release payment only when you\'re fully satisfied with the work.',
-                    icon: '🚀', color: 'from-purple-500 to-pink-500' },
+                { step:'01', title:'Post a Project', desc:"Describe your needs in minutes. Our smart form helps you define scope, budget, and timeline with precision.", icon:'📝', color:'from-indigo-500 to-blue-500' },
+                { step:'02', title:'Get Proposals', desc:'Receive curated proposals from vetted freelancers within hours. Compare portfolios, ratings, and bids side-by-side.', icon:'📬', color:'from-violet-500 to-purple-500' },
+                { step:'03', title:'Hire & Deliver', desc:"Choose the perfect match, collaborate seamlessly, and release payment only when you're fully satisfied with the work.", icon:'🚀', color:'from-purple-500 to-pink-500' },
             ];
-            return ( <RevealSection id="how-it-works" className="py-20 lg:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-14 lg:mb-18">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">How It Works</span>
-                <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
-                Three simple steps to <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">get started</span>
-                </h2>
-                </div>
-                <div className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
-                {/* Connector line (desktop) */}
-                <div className="hidden md:block absolute top-16 left-[18%] right-[18%] h-[2px] bg-gradient-to-r from-indigo-500/30 via-violet-500/30 to-purple-500/30 z-0"></div>
-                {steps.map((s, i) => ( <div key={i} className="relative z-10 text-center group">
-                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/15 group-hover:scale-110 transition-transform duration-300`}>
-                {s.icon}
-                </div>
-                <div className="mt-5 text-xs font-bold uppercase tracking-wider text-indigo-400">{s.step}</div>
-                <h3 className="mt-2 text-xl font-bold dark:text-white text-gray-900">{s.title}</h3>
-                <p className="mt-2 text-sm dark:text-gray-400 text-gray-500 max-w-xs mx-auto leading-relaxed">{s.desc}</p>
-                </div>
-                ))}
-                </div>
-                </div>
+            return (
+                <RevealSection id="how-it-works" className="py-20 lg:py-28">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-14">
+                            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">How It Works</span>
+                            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
+                                Three simple steps to <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">get started</span>
+                            </h2>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
+                            <div className="hidden md:block absolute top-16 left-[18%] right-[18%] h-[2px] bg-gradient-to-r from-indigo-500/30 via-violet-500/30 to-purple-500/30 z-0"></div>
+                            {steps.map((s,i) => (
+                                <div key={i} className="relative z-10 text-center group">
+                                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/15 group-hover:scale-110 transition-transform duration-300`}>{s.icon}</div>
+                                    <div className="mt-5 text-xs font-bold uppercase tracking-wider text-indigo-400">{s.step}</div>
+                                    <h3 className="mt-2 text-xl font-bold dark:text-white text-gray-900">{s.title}</h3>
+                                    <p className="mt-2 text-sm dark:text-gray-400 text-gray-500 max-w-xs mx-auto leading-relaxed">{s.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </RevealSection>
             );
         };
-        
-   
 
-        // ──────────────────────────────────────────────
-        // SERVICES CATEGORIES
-        // ──────────────────────────────────────────────
         const Services = () => {
             const services = [
-                { title: 'Web Development', desc: 'Frontend, Backend & Full Stack engineers vetted for quality and speed. React, Next.js, Node, Python, and more.',
-                    icon: '💻', tags: ['React', 'Next.js', 'Node', 'Python'] },
-                { title: 'UI/UX Design', desc: 'Pixel-perfect interfaces and seamless user experiences. From wireframes to high-fidelity prototypes.',
-                    icon: '🎨', tags: ['Figma', 'Prototyping', 'Design Systems'] },
-                { title: 'Graphic Design', desc: 'Logos, branding guides, social media assets, and marketing collateral crafted by top design talent.',
-                    icon: '✨', tags: ['Logos', 'Branding', 'Social Media'] },
-                    
-                { title: 'Website Templates, coming soon', desc: 'Ready-made, premium templates for rapid deployment. Modern designs built with best practices.',
-                    icon: '📄', tags: ['Ready-made', 'Customizable', 'SEO-ready'] },
-                    ];
-           
-        
-
-
-            return ( <RevealSection id="services" className="py-20 lg:py-28 dark:bg-white/[0.015] bg-gray-100/60">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-14">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Services</span>
-                <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
-                Premium <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">categories</span> for every need
-                </h2>
-                </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {services.map((svc, i) => ( <div key={i}
-                className="service-card glass-card p-6 sm:p-7 cursor-pointer transition-all duration-300 border dark:border-white/[0.06] border-gray-200/60 rounded-2xl">
-                <div className="text-3xl mb-4">{svc.icon}</div>
-                <h3 className="text-lg font-bold dark:text-white text-gray-900">{svc.title}</h3>
-                <p className="mt-2 text-sm dark:text-gray-400 text-gray-500 leading-relaxed">{svc.desc}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                {svc.tags.map(tag => ( <span key={tag}
-                className="text-[11px] font-medium px-2.5 py-1 rounded-full dark:bg-white/[0.05] bg-gray-200/70 dark:text-gray-300 text-gray-600">
-                {tag} </span>
-                ))}
-                </div>
-                </div>
-                ))}
-                </div>
-                </div>
+                { title:'Web Development', desc:'Frontend, Backend & Full Stack engineers vetted for quality and speed. React, Next.js, Node, Python, and more.', icon:'💻', tags:['React','Next.js','Node','Python'] },
+                { title:'UI/UX Design', desc:'Pixel-perfect interfaces and seamless user experiences. From wireframes to high-fidelity prototypes.', icon:'🎨', tags:['Figma','Prototyping','Design Systems'] },
+                { title:'Graphic Design', desc:'Logos, branding guides, social media assets, and marketing collateral crafted by top design talent.', icon:'✨', tags:['Logos','Branding','Social Media'] },
+                { title:'Website Templates, coming soon', desc:'Ready-made, premium templates for rapid deployment. Modern designs built with best practices.', icon:'📄', tags:['Ready-made','Customizable','SEO-ready'] },
+            ];
+            return (
+                <RevealSection id="services" className="py-20 lg:py-28 dark:bg-white/[0.015] bg-gray-100/60">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-14">
+                            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Services</span>
+                            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
+                                Premium <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">categories</span> for every need
+                            </h2>
+                        </div>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                            {services.map((svc,i) => (
+                                <div key={i} className="service-card glass-card p-6 sm:p-7 cursor-pointer transition-all duration-300 border dark:border-white/[0.06] border-gray-200/60 rounded-2xl">
+                                    <div className="text-3xl mb-4">{svc.icon}</div>
+                                    <h3 className="text-lg font-bold dark:text-white text-gray-900">{svc.title}</h3>
+                                    <p className="mt-2 text-sm dark:text-gray-400 text-gray-500 leading-relaxed">{svc.desc}</p>
+                                    <div className="mt-4 flex flex-wrap gap-2">
+                                        {svc.tags.map(tag => (
+                                            <span key={tag} className="text-[11px] font-medium px-2.5 py-1 rounded-full dark:bg-white/[0.05] bg-gray-200/70 dark:text-gray-300 text-gray-600">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </RevealSection>
             );
         };
 
-        // ──────────────────────────────────────────────
-        // WHY HYPER FREELANCE
-        // ──────────────────────────────────────────────
         const WhyUs = () => {
             const advantages = [
-                { title: 'Curated Talent Pool', desc: 'Every freelancer is rigorously vetted. We accept only the top 5% of applicants — quality over quantity, always.',
-                    icon: '🏅' },
-                { title: 'Faster Hiring', desc: 'Average time-to-hire is just 48 hours. Our matching algorithm surfaces the best candidates instantly.',
-                    icon: '⚡' },
-                { title: 'Secure Payments', desc: 'Funds are held in escrow until you approve the work. Full protection for both clients and freelancers.',
-                    icon: '🔒' },
-                { title: 'Quality-Focused', desc: 'Built-in review systems, portfolio verification, and skill assessments ensure exceptional deliverables.',
-                    icon: '✅' },
-                { title: 'Affordable Pricing', desc: 'Competitive rates with zero hidden fees. Transparent pricing means you know exactly what you\'re paying for.',
-                    icon: '💰' },
-                { title: 'Dedicated Support', desc: 'Real human support from our team. We\'re here to help resolve any issue within hours, not days.',
-                    icon: '🤝' },
+                { title:'Curated Talent Pool', desc:"Every freelancer is rigorously vetted. We accept only the top 5% of applicants — quality over quantity, always.", icon:'🏅' },
+                { title:'Faster Hiring', desc:'Average time-to-hire is just 48 hours. Our matching algorithm surfaces the best candidates instantly.', icon:'⚡' },
+                { title:'Secure Payments', desc:'Funds are held in escrow until you approve the work. Full protection for both clients and freelancers.', icon:'🔒' },
+                { title:'Quality-Focused', desc:'Built-in review systems, portfolio verification, and skill assessments ensure exceptional deliverables.', icon:'✅' },
+                { title:'Affordable Pricing', desc:"Competitive rates with zero hidden fees. Transparent pricing means you know exactly what you're paying for.", icon:'💰' },
+                { title:'Dedicated Support', desc:"Real human support from our team. We're here to help resolve any issue within hours, not days.", icon:'🤝' },
             ];
-            return ( <RevealSection id="why-us" className="py-20 lg:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-14">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why Hyper Freelance</span>
-                <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
-                Not just another <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">marketplace</span>
-                </h2>
-                <p className="mt-4 dark:text-gray-400 text-gray-500 max-w-xl mx-auto">We redesigned the freelance experience from the ground up — focused on trust, speed, and exceptional outcomes.</p>
-                </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {advantages.map((adv, i) => ( <div key={i}
-                className="glass-card-light p-6 rounded-2xl border dark:border-white/[0.04] border-gray-200/50 hover:border-indigo-500/20 transition-all duration-300 group">
-                <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 inline-block">{adv.icon}</div>
-                <h3 className="text-base font-bold dark:text-white text-gray-900">{adv.title}</h3>
-                <p className="mt-1.5 text-sm dark:text-gray-400 text-gray-500 leading-relaxed">{adv.desc}</p>
-                </div>
-                ))}
-                </div>
-                </div>
+            return (
+                <RevealSection id="why-us" className="py-20 lg:py-28">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-14">
+                            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why Hyper Freelance</span>
+                            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
+                                Not just another <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">marketplace</span>
+                            </h2>
+                            <p className="mt-4 dark:text-gray-400 text-gray-500 max-w-xl mx-auto">We redesigned the freelance experience from the ground up — focused on trust, speed, and exceptional outcomes.</p>
+                        </div>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            {advantages.map((adv,i) => (
+                                <div key={i} className="glass-card-light p-6 rounded-2xl border dark:border-white/[0.04] border-gray-200/50 hover:border-indigo-500/20 transition-all duration-300 group">
+                                    <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 inline-block">{adv.icon}</div>
+                                    <h3 className="text-base font-bold dark:text-white text-gray-900">{adv.title}</h3>
+                                    <p className="mt-1.5 text-sm dark:text-gray-400 text-gray-500 leading-relaxed">{adv.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </RevealSection>
             );
         };
 
-        // ──────────────────────────────────────────────
-        // FEATURED FREELANCERS
-        // ──────────────────────────────────────────────
         const FeaturedFreelancers = () => {
             const freelancers = [
-                { name: 'Alkasem saad', role: 'Full Stack Developer', rating: 4.8, rate: '',
-                    initials: 'As', gradient: 'from-indigo-400 to-blue-500', skills: 'React • Node • PostgreSQL' },
-                { name: 'Mohamed Ayman ', role: 'UI/UX Designer', rating: 4.8, rate: '', initials: 'Ma',
-                    gradient: 'from-violet-400 to-purple-500', skills: 'Figma • Prototyping • Design Systems' },
-                { name: 'Ola Ahmed', role: 'Graphic Designer', rating: 4.8, rate: '', initials: 'oa',
-                    gradient: 'from-amber-400 to-orange-500', skills: 'Branding • Logos • Illustration' },
-                { name: 'Marwan Atef', role: 'web development', rating: 4.8, rate: '',
-                    initials: 'ma', gradient: 'from-emerald-400 to-teal-500', skills: 'Next.js • Tailwind • TypeScript' },
+                { name:'Alkasem Saad', role:'Full Stack Developer', rating:4.8, initials:'AS', gradient:'from-indigo-400 to-blue-500', skills:'React • Node • PostgreSQL' },
+                { name:'Mohamed Ayman', role:'UI/UX Designer', rating:4.8, initials:'MA', gradient:'from-violet-400 to-purple-500', skills:'Figma • Prototyping • Design Systems' },
+                { name:'Ola Ahmed', role:'Graphic Designer', rating:4.8, initials:'OA', gradient:'from-amber-400 to-orange-500', skills:'Branding • Logos • Illustration' },
+                { name:'Marwan Atef', role:'Web Development', rating:4.8, initials:'MA', gradient:'from-emerald-400 to-teal-500', skills:'Next.js • Tailwind • TypeScript' },
             ];
-            return ( <RevealSection id="freelancers" className="py-20 lg:py-28 dark:bg-white/[0.015] bg-gray-100/60">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-14">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Top Talent</span>
-                <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
-                Featured <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">freelancers</span> ready to work
-                </h2>
-                </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {freelancers.map((f, i) => ( <div key={i}
-                className="profile-card glass-card p-6 rounded-2xl border dark:border-white/[0.06] border-gray-200/60 transition-all duration-300 text-center">
-                <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${f.gradient} flex items-center justify-center text-white font-bold text-xl shadow-lg mb-4`}>
-                {f.initials}
-                </div>
-                <h3 className="font-bold dark:text-white text-gray-900">{f.name}</h3>
-                <p className="text-sm text-indigo-400 font-medium mt-0.5">{f.role}</p>
-                <p className="text-xs dark:text-gray-500 text-gray-400 mt-1.5">{f.skills}</p>
-                <div className="flex items-center justify-center gap-1 mt-3">
-                {[...Array(5)].map((_, j) => ( <StarIcon key={j} filled={j < Math.floor(f.rating)} /> ))}
-                <span className="text-sm font-semibold dark:text-white text-gray-900 ml-1.5">{f.rating}</span>
-                </div>
-                <div className="mt-3 text-lg font-extrabold dark:text-white text-gray-900">{f.rate}</div>
-                <button className="mt-4 w-full py-2.5 rounded-lg dark:bg-white/[0.05] bg-gray-200/60 dark:text-gray-300 text-gray-700 text-sm font-medium hover:bg-indigo-500/10 hover:text-indigo-400 transition-all duration-200">
-                View Profile →
-                </button>
-                </div>
-                ))}
-                </div>
-                <div className="text-center mt-10">
-                <a href="freelancers.html" className="btn-secondary inline-block text-sm">Browse All Freelancers →</a>
-                </div>
-                </div>
+            return (
+                <RevealSection id="freelancers" className="py-20 lg:py-28 dark:bg-white/[0.015] bg-gray-100/60">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-14">
+                            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Top Talent</span>
+                            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
+                                Featured <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">freelancers</span> ready to work
+                            </h2>
+                        </div>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                            {freelancers.map((f,i) => (
+                                <div key={i} className="profile-card glass-card p-6 rounded-2xl border dark:border-white/[0.06] border-gray-200/60 transition-all duration-300 text-center">
+                                    <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${f.gradient} flex items-center justify-center text-white font-bold text-xl shadow-lg mb-4`}>{f.initials}</div>
+                                    <h3 className="font-bold dark:text-white text-gray-900">{f.name}</h3>
+                                    <p className="text-sm text-indigo-400 font-medium mt-0.5">{f.role}</p>
+                                    <p className="text-xs dark:text-gray-500 text-gray-400 mt-1.5">{f.skills}</p>
+                                    <div className="flex items-center justify-center gap-1 mt-3">
+                                        {[...Array(5)].map((_,j) => <StarIcon key={j} filled={j < Math.floor(f.rating)} />)}
+                                        <span className="text-sm font-semibold dark:text-white text-gray-900 ml-1.5">{f.rating}</span>
+                                    </div>
+                                    <button className="mt-4 w-full py-2.5 rounded-lg dark:bg-white/[0.05] bg-gray-200/60 dark:text-gray-300 text-gray-700 text-sm font-medium hover:bg-indigo-500/10 hover:text-indigo-400 transition-all duration-200">
+                                        View Profile →
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="text-center mt-10">
+                            <a href="freelancers.html" className="btn-secondary inline-block text-sm">Browse All Freelancers →</a>
+                        </div>
+                    </div>
                 </RevealSection>
             );
         };
 
-
-       
-
-// ثم أضف المكون الجديد كاملاً:
-const OurWorkSection = () => {
-    return ( 
-        <RevealSection id="our-work" className="py-20 lg:py-28 dark:bg-white/[0.015] bg-gray-100/60">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Our Work</span>
-                <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
-                    See our <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">latest projects</span>
-                </h2>
-                <p className="mt-4 dark:text-gray-400 text-gray-500 max-w-xl mx-auto text-lg">
-                    Browse our curated portfolio of successful collaborations, stunning designs, and high-performance web solutions.
-                </p>
-                <div className="mt-10">
-                    <a href="portfolio page.html" className="btn-primary inline-flex items-center gap-2 text-base px-10 py-4">
-                        Explore Our Work →
-                    </a>
+        const OurWorkSection = () => (
+            <RevealSection id="our-work" className="py-20 lg:py-28 dark:bg-white/[0.015] bg-gray-100/60">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Our Work</span>
+                    <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
+                        See our <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">latest projects</span>
+                    </h2>
+                    <p className="mt-4 dark:text-gray-400 text-gray-500 max-w-xl mx-auto text-lg">
+                        Browse our curated portfolio of successful collaborations, stunning designs, and high-performance web solutions.
+                    </p>
+                    <div className="mt-10">
+                        <a href="portfolio page.html" className="btn-primary inline-flex items-center gap-2 text-base px-10 py-4">Explore Our Work →</a>
+                    </div>
+                    <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        {[
+                            {title:'E-Commerce Redesign',tag:'UI/UX + Dev',color:'from-indigo-500/20 to-blue-500/20'},
+                            {title:'SaaS Dashboard',tag:'Full Stack',color:'from-violet-500/20 to-purple-500/20'},
+                            {title:'Brand Identity Pack',tag:'Graphic Design',color:'from-pink-500/20 to-rose-500/20'},
+                        ].map((item,i) => (
+                            <div key={i} className={`glass-card-light p-6 rounded-2xl border dark:border-white/[0.04] border-gray-200/50 bg-gradient-to-br ${item.color} hover:scale-[1.02] transition-transform duration-300`}>
+                                <div className="text-2xl mb-3 opacity-60">🖼️</div>
+                                <h3 className="font-bold dark:text-white text-gray-900">{item.title}</h3>
+                                <span className="text-xs text-indigo-400 font-medium mt-1 block">{item.tag}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                {/* بطاقات معاينة خفيفة */}
-                <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    {[
-                        { title: 'E-Commerce Redesign', tag: 'UI/UX + Dev', color: 'from-indigo-500/20 to-blue-500/20' },
-                        { title: 'SaaS Dashboard', tag: 'Full Stack', color: 'from-violet-500/20 to-purple-500/20' },
-                        { title: 'Brand Identity Pack', tag: 'Graphic Design', color: 'from-pink-500/20 to-rose-500/20' },
-                    ].map((item, i) => (
-                        <div key={i} className={`glass-card-light p-6 rounded-2xl border dark:border-white/[0.04] border-gray-200/50 bg-gradient-to-br ${item.color} hover:scale-[1.02] transition-transform duration-300`}>
-                            <div className="text-2xl mb-3 opacity-60">🖼️</div>
-                            <h3 className="font-bold dark:text-white text-gray-900">{item.title}</h3>
-                            <span className="text-xs text-indigo-400 font-medium mt-1 block">{item.tag}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </RevealSection>
-    );
-};
+            </RevealSection>
+        );
 
-
-
-
-        // ──────────────────────────────────────────────
-        // TESTIMONIALS
-        // ──────────────────────────────────────────────
         const Testimonials = () => {
             const reviews = [
-                { quote: 'Hyper Freelance helped us find a full-stack developer in under 24 hours. The quality of candidates was night and day compared to other platforms. We shipped our MVP a month early.',
-                    author: 'mohamed saad', role: 'CTO, PulsarTech', initials: 'ms',
-                    gradient: 'from-blue-400 to-cyan-500' },
-                { quote: '"كمصمم مستقل (فريلانسر)، أحب أن Hyper Freelance تختار العملاء بعناية وتوفر عملاء ذوي جودة عالية. هذا يجعلني أقضي وقتًا أقل في تقديم العروض والمنافسة على المشاريع، ووقتًا أكثر في إنجاز أعمال رائعة. كما أن نظام الضمان المالي (Escrow) يمنحني راحة واطمئنانًا كبيرين."',
-                    author: 'سيف اسعد', role: 'Senior UI Designer', initials: 'سا',
-                    gradient: 'from-pink-400 to-rose-500' },
-                { quote: 'كنا بحاجة إلى هوية بصرية كاملة لشركتنا الناشئة خلال وقت قصير جدًا. وجدنا مصممًا رائعًا أنجز لنا حزمة العلامة التجارية كاملة خلال 5 أيام فقط. كانت العملية سلسة وسهلة للغاية من البداية إلى النهاية."',
-                    author: 'سلمي محمود', role: 'Founder, GreenLeaf AI', initials: 'سم',
-                    gradient: 'from-emerald-400 to-green-500' },
+                { quote:'Hyper Freelance helped us find a full-stack developer in under 24 hours. The quality of candidates was night and day compared to other platforms. We shipped our MVP a month early.', author:'Mohamed Saad', role:'CTO, PulsarTech', initials:'MS', gradient:'from-blue-400 to-cyan-500' },
+                { quote:'كمصمم مستقل، أحب أن Hyper Freelance تختار العملاء بعناية وتوفر عملاء ذوي جودة عالية. هذا يجعلني أقضي وقتاً أقل في تقديم العروض، ووقتاً أكثر في إنجاز أعمال رائعة. نظام الضمان المالي يمنحني راحة واطمئناناً كبيرين.', author:'سيف اسعد', role:'Senior UI Designer', initials:'سا', gradient:'from-pink-400 to-rose-500' },
+                { quote:'كنا بحاجة إلى هوية بصرية كاملة خلال وقت قصير. وجدنا مصمماً رائعاً أنجز لنا حزمة العلامة التجارية كاملة خلال 5 أيام فقط. كانت العملية سلسة وسهلة من البداية إلى النهاية.', author:'سلمي محمود', role:'Founder, GreenLeaf AI', initials:'سم', gradient:'from-emerald-400 to-green-500' },
             ];
-            return ( <RevealSection className="py-20 lg:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-14">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Testimonials</span>
-                <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
-                What our <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">users</span> say
-                </h2>
-                </div>
-                <div className="grid md:grid-cols-3 gap-6">
-                {reviews.map((r, i) => ( <div key={i}
-                className="glass-card p-6 sm:p-7 rounded-2xl border dark:border-white/[0.06] border-gray-200/60 flex flex-col">
-                <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, j) => ( <StarIcon key={j} filled={true} /> ))}
-                </div>
-                <p className="text-sm dark:text-gray-300 text-gray-600 leading-relaxed flex-1 italic">"{r.quote}"</p>
-                <div className="mt-5 flex items-center gap-3 pt-4 border-t dark:border-white/[0.06] border-gray-200">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${r.gradient} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
-                {r.initials}
-                </div>
-                <div>
-                <div className="font-semibold dark:text-white text-gray-900 text-sm">{r.author}</div>
-                <div className="text-xs dark:text-gray-500 text-gray-400">{r.role}</div>
-                </div>
-                </div>
-                </div>
-                ))}
-                </div>
-                </div>
+            return (
+                <RevealSection className="py-20 lg:py-28">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-14">
+                            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Testimonials</span>
+                            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold dark:text-white text-gray-900 tracking-tight">
+                                What our <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">users</span> say
+                            </h2>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            {reviews.map((r,i) => (
+                                <div key={i} className="glass-card p-6 sm:p-7 rounded-2xl border dark:border-white/[0.06] border-gray-200/60 flex flex-col">
+                                    <div className="flex gap-1 mb-4">{[...Array(5)].map((_,j) => <StarIcon key={j} filled={true} />)}</div>
+                                    <p className="text-sm dark:text-gray-300 text-gray-600 leading-relaxed flex-1 italic">"{r.quote}"</p>
+                                    <div className="mt-5 flex items-center gap-3 pt-4 border-t dark:border-white/[0.06] border-gray-200">
+                                        <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${r.gradient} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>{r.initials}</div>
+                                        <div>
+                                            <div className="font-semibold dark:text-white text-gray-900 text-sm">{r.author}</div>
+                                            <div className="text-xs dark:text-gray-500 text-gray-400">{r.role}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </RevealSection>
             );
         };
 
-
-
-      
-
-
-        // ──────────────────────────────────────────────
-        // CTA SECTION
-        // ──────────────────────────────────────────────
-        const CTASection = () => {
-            return ( <RevealSection id="cta" className="py-20 lg:py-28">
+        const CTASection = () => (
+            <RevealSection id="cta" className="py-20 lg:py-28">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 p-8 sm:p-12 lg:p-16 text-center shadow-2xl shadow-indigo-500/25">
-                    {/* Inner glow */}
-                    <div className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent opacity-40 pointer-events-none"></div>
-                    <div className="relative z-10">
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-                    Start building your project today
-                    </h2>
-                    <p className="mt-4 text-lg text-indigo-100 max-w-lg mx-auto">
-                    Join 50+ freelancers and 12+ satisfied clients. The premium marketplace for web and design talent.
-                    </p>
-                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="client project form.html"
-                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold text-base hover:bg-gray-100 transition-all duration-200 hover:scale-[1.03] shadow-lg">
-                    Start a Project ✦
-                    </a>
-                    <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7"
-                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-transparent text-white font-semibold text-base border-2 border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-200">
-                    Join as Freelancer →
-                    </a>
-                    </div>
-                    <p className="mt-6 text-sm text-indigo-200/70">No subscription required • Free to post • Pay only when satisfied</p>
+                    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 p-8 sm:p-12 lg:p-16 text-center shadow-2xl shadow-indigo-500/25">
+                        <div className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent opacity-40 pointer-events-none"></div>
+                        <div className="relative z-10">
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">Start building your project today</h2>
+                            <p className="mt-4 text-lg text-indigo-100 max-w-lg mx-auto">Join 50+ freelancers and 12+ satisfied clients. The premium marketplace for web and design talent.</p>
+                            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="client project form.html" className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold text-base hover:bg-gray-100 transition-all duration-200 hover:scale-[1.03] shadow-lg">Start a Project ✦</a>
+                                <a href="https://forms.gle/oZ3yoQzpvsiGCkcM7" className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-transparent text-white font-semibold text-base border-2 border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-200">Join as Freelancer →</a>
+                            </div>
+                            <p className="mt-6 text-sm text-indigo-200/70">No subscription required • Free to post • Pay only when satisfied</p>
+                        </div>
                     </div>
                 </div>
-                </div>
-                </RevealSection>
-            );
-        };
+            </RevealSection>
+        );
 
-
-
-
-
-        // ──────────────────────────────────────────────
-        // FOOTER
-        // ──────────────────────────────────────────────
         const Footer = () => {
             const linkGroups = [
-                { title: 'Platform', links: ['How It Works', 'Services', 'Pricing', 'Featured Freelancers'] },
-                { title: 'Company', links: ['About Us', 'Blog', 'Careers', 'Press Kit'] },
-                { title: 'Support', links: ['Help Center', 'Contact', 'Terms of Service', 'Privacy Policy'] },
+                { title:'Platform', links:['How It Works','Services','Pricing','Featured Freelancers'] },
+                { title:'Company', links:['About Us','Blog','Careers','Press Kit'] },
+                { title:'Support', links:['Help Center','Contact','Terms of Service','Privacy Policy'] },
             ];
-            return ( <footer className="py-16 border-t dark:border-white/[0.04] border-gray-200">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
-                    {/* Brand column */}
-                    <div className="lg:col-span-2">
-                    <a href="hyper logo ym17.jpeg" className="">
-                    <div className="">
-                    
-                    </div>   
-                    <span className="font-bold text-lg tracking-tight dark:text-white text-gray-900">
-                    Hyper<span className="text-indigo-400">Freelance</span>
-                    </span>
-                    </a>
-                    <p className="text-sm dark:text-gray-500 text-gray-400 max-w-xs leading-relaxed">
-                    The curated freelance marketplace for elite web developers, designers, and template creators. Quality over quantity, always.
-                    </p>
-                    {/* Social icons */}
-                    <div className="flex gap-3 mt-5">
-                    {['w', ''].map(social => ( <a key={social} href="https://wa.me/201270804867"
-                    className="w-9 h-9 rounded-lg dark:bg-white/[0.04] bg-gray-200/60 flex items-center justify-center text-xs font-bold dark:text-gray-400 text-gray-500 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all duration-200"
-                    aria-label={social}>
-                    {social}
-                    </a>
-                    ))}
+            return (
+                <footer className="py-16 border-t dark:border-white/[0.04] border-gray-200">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+                            <div className="lg:col-span-2">
+                                <span className="font-bold text-lg tracking-tight dark:text-white text-gray-900">Hyper<span className="text-indigo-400">Freelance</span></span>
+                                <p className="mt-3 text-sm dark:text-gray-500 text-gray-400 max-w-xs leading-relaxed">The curated freelance marketplace for elite web developers, designers, and template creators. Quality over quantity, always.</p>
+                                <div className="flex gap-3 mt-5">
+                                    <a href="https://wa.me/201270804867" className="w-9 h-9 rounded-lg dark:bg-white/[0.04] bg-gray-200/60 flex items-center justify-center text-xs font-bold dark:text-gray-400 text-gray-500 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all duration-200">W</a>
+                                </div>
+                            </div>
+                            {linkGroups.map(group => (
+                                <div key={group.title}>
+                                    <h4 className="font-semibold dark:text-white text-gray-900 text-sm mb-4">{group.title}</h4>
+                                    <ul className="space-y-2.5">
+                                        {group.links.map(link => (
+                                            <li key={link}><a href="#" className="text-sm dark:text-gray-500 text-gray-400 hover:text-indigo-400 transition-colors duration-200">{link}</a></li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-12 pt-6 border-t dark:border-white/[0.04] border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <p className="text-xs dark:text-gray-600 text-gray-400">© 2026 Hyper Freelance. All rights reserved.</p>
+                            <p className="text-xs dark:text-gray-600 text-gray-400">Built with ❤️ for the future of work</p>
+                        </div>
                     </div>
-                    </div>
-                    {/* Link groups */}
-                    {linkGroups.map((group) => ( <div key={group.title}>
-                    <h4 className="font-semibold dark:text-white text-gray-900 text-sm mb-4">{group.title}</h4>
-                    <ul className="space-y-2.5">
-                    {group.links.map(link => ( <li key={link}><a href="#"
-                    className="text-sm dark:text-gray-500 text-gray-400 hover:text-indigo-400 transition-colors duration-200">
-                    {link}
-                    </a></li>
-                    ))}
-                    </ul>
-                    </div>
-                    ))}
-                </div>
-                <div className="mt-12 pt-6 border-t dark:border-white/[0.04] border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p className="text-xs dark:text-gray-600 text-gray-400">© 2026 Hyper Freelance. All rights reserved.</p>
-                <p className="text-xs dark:text-gray-600 text-gray-400">Built with ❤️ for the future of work</p>
-                </div>
-                </div>
                 </footer>
             );
         };
 
-        // ──────────────────────────────────────────────
-        // MAIN APP
-        // ──────────────────────────────────────────────
         const App = () => {
             const [darkMode, setDarkMode] = useState(true);
-
             useEffect(() => {
                 const html = document.documentElement;
-                if (darkMode) {
-                    html.classList.add('dark');
-                    html.classList.remove('light');
-                } else {
-                    html.classList.remove('dark');
-                    html.classList.add('light');
-                }
+                if (darkMode) { html.classList.add('dark'); html.classList.remove('light'); }
+                else { html.classList.remove('dark'); html.classList.add('light'); }
             }, [darkMode]);
-
-            const toggleDarkMode = useCallback(() => {
-                setDarkMode(prev => !prev);
-            }, []);
-
-            return ( <div className={`min-h-screen ${darkMode ? 'dark' : 'light'}`}>
-                <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-                <main>
-                <Hero />
-                <SocialProof />
-                <HowItWorks />
-                <Services />
-                <WhyUs />
-                <FeaturedFreelancers />
-                <Testimonials />
-                <OurWorkSection />
-                <CTASection />
-                </main>
-                <Footer />
+            const toggleDarkMode = useCallback(() => setDarkMode(prev => !prev), []);
+            return (
+                <div className={`min-h-screen ${darkMode ? 'dark' : 'light'}`}>
+                    <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                    <main>
+                        <Hero />
+                        <SocialProof />
+                        <HowItWorks />
+                        <Services />
+                        <WhyUs />
+                        <FeaturedFreelancers />
+                        <Testimonials />
+                        <OurWorkSection />
+                        <CTASection />
+                    </main>
+                    <Footer />
                 </div>
             );
         };
 
-        // ──────────────────────────────────────────────
-        // MOUNT
-        // ──────────────────────────────────────────────
         const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render( <App /> );
+        root.render(<App />);
     </script>
 
-
-
-    <a href="https://wa.me/201270804867"
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="تحدث معنا على واتساب"
-    title="تحدث معنا على واتساب">
-
-    <!-- أيقونة واتساب أصلية -->
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-    </svg>
-
-</a>
-
-
-  </body>
-  </html>
+    <a href="https://wa.me/201270804867" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="تحدث معنا على واتساب" title="تحدث معنا على واتساب">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+    </a>
+</body>
+</html>
